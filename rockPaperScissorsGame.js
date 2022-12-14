@@ -40,7 +40,7 @@ let totalClick = 0;
 let winSound = new Audio("win.wav");
 let drawSound = new Audio("draw.mp3");
 let clickSound = new Audio("click.wav");
-let backgroundMusic = new Audio("I-promised.mp3");
+let backgroundMusic = new Audio("i-promised.mp3");
 function rock() {
   var userValue = "rock";
   var options = ["rock", "paper", "scissors"];
