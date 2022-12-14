@@ -171,7 +171,7 @@ function soundPlay() {
 //Sound Function that is triggered onload of the page
 
 function playMusic() {
-//   backgroundMusic.play();
+  backgroundMusic.play();
 }
 
 
