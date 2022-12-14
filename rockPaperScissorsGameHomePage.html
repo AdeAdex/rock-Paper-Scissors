@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="fontawesome-free-6.1.1-web/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="rockPaperScissorsGameHomePage.css" />
+    <link rel="stylesheet" href="bootstrap.css" />
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div class="main-container">
+      <div class="main">
+        <div id="nameContainer">
+          <div class="modal fade" id="myModal">
+            <div class="modal-dialog modal-sm modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title">Options</h4>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <button>Settings</button>
+                  <button onclick="rules()">Rules</button>
+                  <button>Configuration</button>
+                  <button id="modalBtn" onclick="openSaveNameModal()">
+                    Change Names
+                  </button>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="nameContainer2">
+          <div id="changeNameModal" class="change-name-modal">
+            <div class="change-name-modal-content">
+              <div class="change-name-modal-header">
+                <h2>Change Name</h2>
+                <span
+                  class="change-name-modal-close"
+                  id="closeBtn"
+                  onclick="closeSaveNameModal()"
+                  >&times;</span
+                >
+              </div>
+              <div class="change-name-modal-body">
+                <div id="changeNameAlertTxt"></div>
+                <div class="name-input">
+                  <h3>Human</h3>
+                  <input
+                    type="text"
+                    placeholder="Enter Your Name"
+                    id="userNameInput"
+                  />
+                </div>
+                <div class="name-input">
+                  <h3>Player 2</h3>
+                  <input
+                    type="text"
+                    placeholder="Opponent Name"
+                    id="computerNameInput"
+                  />
+                </div>
+              </div>
+              <div class="change-name-modal-footer">
+                <button
+                  type="submit"
+                  class="btn btn-primary"
+                  onclick="saveNames()"
+                >
+                  Save changes
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="rulesContainer">
+          <div id="rulesModal">
+            <div class="rules-modal-content">
+              <h1>
+                Welcome to the rock, Paper, scissors game rules and regulations
+              </h1>
+              <div class="rules-modal-header">
+                <h2>Game Instructions</h2>
+                <span
+                  class="rules-modal-close"
+                  id="closeBtn"
+                  onclick="closeSaveNameModal()"
+                  >&times;</span
+                >
+              </div>
+              <div class="rules-modal-body">
+                <h3>Overview</h3>
+                This game is played by children and adults and is popular all
+                over the world. Apart from being a game played to pass time, the
+                game is usually played in situations where something has to be
+                chosen. It is similar in that way to other games like flipping
+                the coin, throwing dice or drawing straws. There is no room for
+                cheating or for knowing what the other person is going to do so
+                the results are usually very satisfying with no room for
+                fighting or error.
+
+                <h3>Plays</h3>
+                Rock Paper Scissors is a two player game. The objective is to
+                select a play (i.e Rock, Paper or Scissors) that defeat your
+                opponent's play
+                <ul>
+                  <li>
+                    If one player picks rock and one scissors, the player who
+                    pick Rock wins the dispute
+                    <p>Rock Smashes Scissors, Rock Win</p>
+                  </li>
+                  <li>
+                    If one player picks scissors and the other paper, the player
+                    who showed scissors succeeds.
+                    <p>Scissors cut Paper, Scissors Win</p>
+                  </li>
+                  <li>
+                    If a player shows paper while the other shows rock, the
+                    player who picked paper succeeds.
+                    <p>Paper covers Rock, Paper Win</p>
+                  </li>
+                  <li>
+                    If the play is the same, nobody win, It's a tie. 
+                    <p>Play again to win</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <img src="pic/welcomeImg.gif" alt="" class="animation1" />
+        <h1 id="welcomeName"></h1>
+        <img src="pic/playMethod2.gif" alt="" class="animation2" />
+        <div class="avatar-container">
+          <img src="pic/rock.gif" alt="" class="avatar1" />
+          <div class="avatar23">
+            <img src="pic/scissors.gif" alt="" class="avatar2" />
+            <img src="pic/paper.gif" alt="" class="avatar3" />
+          </div>
+          <h6>Rock, Paper, Scissors</h6>
+        </div>
+        <div id="loading"></div>
+        <button id="playBtn" onclick="next()">Play Game</button>
+        <footer>
+          <button data-bs-toggle="modal" data-bs-target="#myModal">
+            <i class="fas fa-gear"></i> <span>settings</span>
+          </button>
+          <button>
+            <i class="fas fa-audio-description"></i> <span>advanced</span>
+          </button>
+          <button><i class="fas fa-refresh"></i> <span>reset</span></button>
+        </footer>
+      </div>
+    </div>
+
+    <script src="rockPaperScissorsGameHomePage.js"></script>
+    <script src="bootstrap.bundle.js"></script>
+    <script src="bootstrap.bundle.min.js"></script>
+  </body>
+</html>

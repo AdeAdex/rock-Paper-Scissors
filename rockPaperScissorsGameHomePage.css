@@ -1,0 +1,506 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  height: 100vh;
+}
+*:focus {
+  outline: none;
+}
+
+.main-container {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(3, 3, 29);
+  position: relative;
+  display: flex;
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 50px;
+}
+
+@media screen and (min-width: 600px) {
+  .main-container {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(3, 3, 29);
+  }
+  .main {
+    width: 50%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 50px;
+    background-color: rgb(0, 0, 42);
+  }
+  .animation1 {
+    height: 300px;
+  }
+}
+
+#welcomeName {
+  text-transform: uppercase;
+  font-weight: bold;
+  width: 100%;
+  height: 30px;
+  text-align: center;
+  margin-top: 0px;
+  color: rgb(192, 192, 6);
+  letter-spacing: 2px;
+  font-family: cursive;
+  animation: blinkname 4s infinite;
+}
+
+@keyframes blinkname {
+  0% {
+    transform: scale(1.3);
+  }
+  20% {
+    transform: scale(0.5);
+  }
+  40% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1);
+  }
+  80% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animation2 {
+  height: 100px;
+  /* border: 1px solid red; */
+}
+
+.avatar-container {
+  width: 100%;
+  justify-content: center;
+  /* border: 1px solid yellow; */
+  position: relative;
+  bottom: 20px;
+  margin-bottom: -50px;
+}
+
+.avatar1,
+.avatar2,
+.avatar3 {
+  width: 50px;
+  height: 50px;
+  border: 5px solid red;
+  border-radius: 50%;
+}
+
+.avatar1 {
+  display: grid;
+  margin: 0px auto;
+  animation-name: avatar1;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes avatar1 {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    transform: translateX(-100px);
+    opacity: 1;
+  }
+  10% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+  15% {
+    transform: translateY(-50px);
+    opacity: 1;
+  }
+  20% {
+    transform: translateY(15px);
+    opacity: 1;
+  }
+  /* 20% {transform: translateY(-30px); opacity: 1;} */
+  /* 25% {transform: translateY(12px); opacity: 1;} */
+  /* 60% {transform: translateY(-30px); opacity: 1;} */
+  /* 70% {transform: translateY(0px); opacity: 1;} */
+  /* 80% {transform: translateY(-10px); opacity: 1;} */
+  /* 85% {transform: translateY(0px); opacity: 1;} */
+  /* 90% {transform: translateX(100px); opacity: 0;} */
+  /* 93% {opacity: 1;} */
+  /* 100% {transform: translateX(0px); opacity: 0;} */
+}
+
+.avatar23 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.avatar2 {
+  margin-right: 10px;
+  border: 5px solid rgb(0, 102, 255);
+  animation-name: avatar2;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes avatar2 {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    transform: translateX(0px);
+  }
+  8% {
+    transform: translateY(0px);
+  }
+  8% {
+    transform: translateY(0px);
+  }
+  10% {
+    transform: translateY(0px);
+  }
+  12% {
+    transform: translateY(0px);
+  }
+  15% {
+    transform: translateY(0px);
+  }
+  20% {
+    transform: translateY(0px);
+  }
+  25% {
+    transform: translateY(0px);
+  }
+  30% {
+    transform: translateX(0px);
+  }
+  35% {
+    transform: translateX(-50px);
+  }
+  40% {
+    transform: translateX(30px);
+  }
+}
+
+.avatar3 {
+  border: 5px solid orange;
+  animation-name: avatar3;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes avatar3 {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    transform: translateX(0px);
+  }
+  8% {
+    transform: translateY(0px);
+  }
+  10% {
+    transform: translateY(0px);
+  }
+  12% {
+    transform: translateY(0px);
+  }
+  15% {
+    transform: translateY(0px);
+  }
+  20% {
+    transform: translateY(0px);
+  }
+  25% {
+    transform: translateY(-70px);
+  }
+  30% {
+    transform: translateY(-50px);
+  }
+  35% {
+    transform: translateX(0px);
+  }
+  38% {
+    transform: translateX(30px);
+  }
+  100% {
+    transform: translateX();
+  }
+}
+
+.avatar-container h6 {
+  width: 50%;
+  margin: 5px auto;
+  text-align: center;
+  color: white;
+}
+
+#loading {
+  width: 100%;
+  height: 80px;
+  margin: 40px auto 0px auto;
+  text-align: center;
+  /* border: 1px solid white; */
+}
+
+.loading-container {
+  color: white;
+  font-size: 20px;
+}
+.spinner-border {
+  font-size: initial;
+  color: orange;
+}
+
+#playBtn {
+  padding: 8px 15px;
+  margin: 15px auto 0px auto;
+  font-weight: bold;
+  color: white;
+  background-color: green;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+footer {
+  margin: auto auto 0px auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+footer button {
+  padding: 4px;
+  width: auto;
+  display: flex;
+  color: white;
+  background-color: rgb(0, 32, 98);
+  cursor: pointer;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+footer .fas {
+  padding-right: 5px;
+  margin: auto 0px;
+}
+
+.modal-backdrop {
+  z-index: -1 !important;
+}
+
+.modal-backdrop.in {
+  opacity: 0 !important;
+}
+
+.modal-content {
+  background-color: rgb(2, 36, 52) !important;
+  color: white !important;
+}
+
+.btn-close {
+  background-color: red !important;
+}
+
+.modal-body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-body button {
+  width: 50%;
+  margin: 5px auto;
+  padding: 8px;
+  border-radius: 15px;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: rgb(3, 81, 81);
+  box-shadow: inset 0px 2px 1px 3px rgb(116, 230, 2);
+  color: whitesmoke;
+  cursor: pointer;
+}
+
+#changeNameMain {
+  width: 100%;
+  height: auto;
+  background-color: brown;
+  padding: 30px;
+}
+
+#changeNameAlertTxt {
+  height: auto;
+  color: whitesmoke;
+}
+
+#faWarning {
+  color: orange;
+}
+
+.name-input {
+  display: flex;
+  margin: 5px;
+  padding: 10px;
+  background-color: darkcyan;
+  border-radius: 10px;
+}
+.name-input h3 {
+  margin-right: 5px;
+  width: 30%;
+  margin: auto 0px;
+  color: white;
+}
+.name-input input {
+  padding: 8px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px 2px orange;
+  background-color: black;
+  color: white;
+  text-transform: uppercase;
+  width: 70%;
+}
+
+.save-change {
+  display: flex;
+  padding: 5px 15px;
+  margin: 20px auto;
+  background-color: rgb(0, 115, 255);
+  color: white;
+  font-size: 15px;
+  border-radius: 10px;
+}
+
+.change-name-modal, #rulesModal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(3, 3, 31, 0.4);
+}
+
+.change-name-modal-content, .rules-modal-content {
+  position: relative;
+  background-color: brown;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 100%;
+  border-radius: 10px;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+}
+.rules-modal-content {
+  height: 70%;
+  background-color: dimgray;
+  margin: auto 0px;
+  overflow-y: auto;
+} 
+.rules-modal-content h1 {
+  padding: 50px 30px;
+  text-align: center;
+  font-size: 40px;
+  color: whitesmoke;
+  text-transform: uppercase;
+} 
+
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.change-name-modal-close, .rules-modal-close{
+  color: red;
+  font-size: 30px;
+  font-weight: bold;
+}
+.change-name-modal h2, #rulesModal h2 {
+  margin: auto 0px;
+}
+
+.change-name-modal-close:hover,
+.change-name-modal-close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.change-name-modal-header, .rules-modal-header{
+  padding: 0px 16px;
+  background-color: rgb(1, 2, 41);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.change-name-modal-body{
+  padding: 2px 16px;
+}
+.rules-modal-body {
+  color: white;
+  padding: 0px 40px 80px 40px;
+} 
+
+.rules-modal-body h3 {
+  text-align: center;
+  color: orange;
+  margin: 20px 0px;
+} 
+.rules-modal-body ul {
+  margin-top: 10px;
+}
+
+.rules-modal-header {
+  background-color: darkcyan;
+  padding: 16px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+} 
+.change-name-modal-footer{
+  margin-top: 20px;
+  padding: 20px 16px 5px 16px;
+  background-color: rgb(1, 2, 41);
+  color: white;
+  display: flex;
+  justify-content: end;
+}
