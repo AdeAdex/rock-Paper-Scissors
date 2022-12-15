@@ -191,8 +191,18 @@ body {
     transform: translateX(-50px);
   }
   40% {
+    transform: translateX(-50px);
+  }
+  45% {
+    transform: translateX(-30px);
+  }
+  47% {
+    transform: translateX(-30px);
+  }
+  50% {
     transform: translateX(30px);
   }
+  
 }
 
 .avatar3 {
@@ -236,8 +246,21 @@ body {
   38% {
     transform: translateX(30px);
   }
+  40% {
+    transform: translateY(-70px), translateX(-50px);
+  }
+  45% {
+    transform: scale(2);
+  }
+  50% {
+    transform: translateY(-70px);
+  }
+  55% {
+    transform: translateY(-70px), scaleZ(2);
+  }
+  
   100% {
-    transform: translateX();
+    transform: translateZ(-70px);
   }
 }
 
