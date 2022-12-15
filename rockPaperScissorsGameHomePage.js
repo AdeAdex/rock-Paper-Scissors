@@ -1,3 +1,44 @@
+// function to save player names into local Storage
+
+
+var userDetail =  /* JSON.parse(localStorage.getItem('localDetails'))  */ []
+if (localStorage.localDetails) {
+    var oldDetails =  JSON.parse(localStorage.getItem('localDetails'))
+    userDetail = oldDetails
+    display()
+}
+
+// userDetail =  JSON.parse(localStorage.getItem('localScore'))
+function saveNames() {
+  if (userNameInput.value == "") {
+    changeNameAlertTxt.innerHTML = `<i class="fas fa-warning" id="faWarning"></i> Kindly enter your name below and hit "Save changes" button to save your name or hit "Close" icon to continue using default name`;
+  } else if (userNameInput.value != "") {
+    changeNameAlertTxt.innerHTML = ``
+    var allPlayers = {
+      myName : userNameInput.value,
+      computerName : computerNameInput.value,
+  }
+  userDetail.push(allPlayers);
+  localStorage.setItem('localDetails', JSON.stringify(userDetail))
+  // welcomeName.innerHTML = allPlayers.myName;
+  changeNameModal.style.display = "none";
+  }
+  display()
+}
+
+
+
+// Function that get or display userName and ComputerName
+
+// userDetail = JSON.parse(localStorage.getItem("localDetails"));
+function display() {
+  for (let index = 0; index < userDetail.length; index++) {
+    welcomeName.innerHTML = `${userDetail[index].myName}`;
+  }
+}
+
+
+
 // function to set loading timeout
 
 function next() {
@@ -23,32 +64,6 @@ function next() {
 }
 
 
-
-// function to save player names into local Storage
-
-
-var userDetail = []
-if (localStorage.localDetails) {
-    var oldDetails =  JSON.parse(localStorage.getItem('localDetails'))
-    userDetail = oldDetails
-}
-
-function saveNames() {
-  if (userNameInput.value == "") {
-    changeNameAlertTxt.innerHTML = `<i class="fas fa-warning" id="faWarning"></i> Kindly enter your name below and hit "Save changes" button to save your name or hit "Close" icon to continue using default name`;
-  } else if (userNameInput.value != "") {
-    changeNameAlertTxt.innerHTML = ``
-    var allPlayers = {
-      myName : userNameInput.value,
-      computerName : computerNameInput.value,
-  }
-  userDetail.push(allPlayers);
-  localStorage.setItem('localDetails', JSON.stringify(userDetail))
-  welcomeName.innerHTML = allPlayers.myName;
-  changeNameModal.style.display = "none";
-  }
-  oldDetails =  JSON.parse(localStorage.getItem('localDetails'))
-}
 
 
 // function to make progress bar width 
