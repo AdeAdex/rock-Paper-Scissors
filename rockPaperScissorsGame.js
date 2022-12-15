@@ -156,14 +156,14 @@ function soundPlay() {
         you.value ++;
         winSound.play();
         mainContainer.style.backgroundImage = "url('pic/congrats3.gif')";
-        return totalClick, computerScore.value = 0;
+        return totalClick = 0;
       } else if (totalClick === 5 && myScore.value > computerScore.value) {
         disp4.innerHTML = `${userDetail[index].myName} win`
 
         me.value ++;
         winSound.play();
         mainContainer.style.backgroundImage = "url('pic/congrats3.gif')";
-        return totalClick, myScore.value = 0;
+        return totalClick = 0;
       } else if (totalClick === 5 && myScore.value === computerScore.value) {
         disp4.innerHTML = `${userDetail[index].myName} and ${userDetail[index].computerName} draw`
         drawSound.play();
