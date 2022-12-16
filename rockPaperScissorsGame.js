@@ -1,14 +1,3 @@
-// Function that get or display userName and ComputerName
-
-
-// function display() {
-//   for (let index = 0; index < userDetail.length; index++) {
-    
-//     // disp4.innerHTML = `${userDetail[index].computerName} win`
-//   }
-// }
-
-
 
 
 // Function that set both userScore and computerScore into the localStorage
@@ -52,19 +41,22 @@ function rock() {
     img2.src = "pic/rock.svg";
   } else if (computerValue == `paper`) {
     disp3.innerHTML = `${userValue} cover by ${computerValue}`;
+    disp2.style.backgroundImage = "url('pic/border2.png')";
+    disp4.innerHTML = ``;
     img1.src = "pic/rock.svg";
     img2.src = "pic/paper.gif";
     computerResult += 1;
     computerScore.value = computerResult;
-    // return computerScore.value = 0;
   } else if (computerValue == `scissors`) {
     disp3.innerHTML = `${userValue} crushes ${computerValue}`;
+    disp.style.backgroundImage = "url('pic/border2.png')";
+    disp4.innerHTML = ``;
     img1.src = "pic/rock.svg";
     img2.src = "pic/scissors.gif";
     userResult += 1;
     myScore.value = userResult;
-    // return myScore.value = 0
-  }
+
+  } 
 //   display();
   soundPlay();
   allUserScore();
@@ -88,16 +80,18 @@ function paper() {
     img2.src = "pic/paper.gif";
   } else if (computerValue == `rock`) {
     disp3.innerHTML = `${userValue} cover ${computerValue}`;
+     disp4.innerHTML = ``;
     img1.src = "pic/paper.gif";
     img2.src = "pic/rock.svg";
-    // userResult += 1;
-    // userScore.value = userResult;
+    userResult += 1;
+    myScore.value = userResult;
   } else if (computerValue == `scissors`) {
     disp3.innerHTML = `${userValue} cut by ${computerValue}`;
+     disp4.innerHTML = ``;
     img1.src = "pic/paper.gif";
     img2.src = "pic/scissors.gif";
-    // computerResult += 1;
-    // computerScore.value = computerResult;
+     computerResult += 1;
+     computerScore.value = computerResult;
   }
 //   display();
   soundPlay();
@@ -122,16 +116,18 @@ function scissors() {
     img2.src = "pic/scissors.gif";
   } else if (computerValue == `rock`) {
     disp3.innerHTML = `${userValue} crushed by ${computerValue} `;
+     disp4.innerHTML = ``;
     img1.src = "pic/scissors.gif";
     img2.src = "pic/rock.svg";
-    // computerResult += 1;
-    // computerScore.value = computerResult;
+     computerResult += 1;
+     computerScore.value = computerResult;
   } else if (computerValue == `paper`) {
     disp3.innerHTML = `${userValue} cut ${computerValue}`;
+     disp4.innerHTML = ``;
     img1.src = "pic/scissors.gif";
     img2.src = "pic/paper.gif";
-    // userResult += 1;
-    // userScore.value = userResult;
+    userResult += 1;
+    myScore.value = userResult;
   }
 //   display();
   soundPlay();
@@ -150,30 +146,36 @@ function soundPlay() {
   for (let index = 0; index < userDetail.length; index++) {
     disp.innerHTML = `${userDetail[index].myName} PICKED`;
     disp2.innerHTML = `${userDetail[index].computerName} PICKED`;
-    if (totalClick === 5 && computerScore.value > myScore.value) {
+    /*if (totalClick === 5){
+      return (totalClick = 0, userResult = 0, computerResult = 0) 
+    } else */if (totalClick === 5 && computerScore.value > myScore.value) {
         disp4.innerHTML = `${userDetail[index].computerName} win`
-  
+        // disp4.style.backgroundImage = "url('pic/congrats2.gif)";
         you.value ++;
         winSound.play();
         mainContainer.style.backgroundImage = "url('pic/congrats3.gif')";
-        return totalClick = 0;
+        return (totalClick = 0), (computerResult = 0) 
       } else if (totalClick === 5 && myScore.value > computerScore.value) {
         disp4.innerHTML = `${userDetail[index].myName} win`
-
+        // disp4.style.backgroundImage = "ur('pic/congrats2.gif)";
         me.value ++;
         winSound.play();
         mainContainer.style.backgroundImage = "url('pic/congrats3.gif')";
-        return totalClick = 0;
+        return (totalClick = 0) , (userResult = 0) ;
       } else if (totalClick === 5 && myScore.value === computerScore.value) {
         disp4.innerHTML = `${userDetail[index].myName} and ${userDetail[index].computerName} draw`
         drawSound.play();
         // mainContainer.style.backgroundImage = "url('pic/congrats3.gif')";
-        return (totalClick = 0);
-      } else {
+        return  (totalClick = 0), (computerResult = 0), (userResult = 0);
+      } else if (totalClick === 5 && (myScore.value < computerScore.value ||  computerScore.value < myScore.value )) {
+        return  (userResult = 0, computerResult = 0); 
+      } /*else if (totalClick == 5 && computerScore.value < myScore.value ) {
+        return  computerResult = 0; 
+      }*/  else {
         clickSound.play();
         mainContainer.style.backgroundImage = "url('')";
       }
-  }
+  }localStorage.setItem("localScore", JSON.stringify(userScore));
   
 }
 
@@ -182,7 +184,7 @@ function soundPlay() {
 //Sound Function that is triggered onload of the page
 
 function playMusic() {
-//   backgroundMusic.play();
+   backgroundMusic.play();
 }
 
 
