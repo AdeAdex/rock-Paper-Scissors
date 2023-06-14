@@ -1,32 +1,30 @@
 // function to save player names into local Storage
 
-
-var userDetail =  /* JSON.parse(localStorage.getItem('localDetails'))  */ []
+var userDetail = /* JSON.parse(localStorage.getItem('localDetails'))  */ [];
 if (localStorage.localDetails) {
-    var oldDetails =  JSON.parse(localStorage.getItem('localDetails'))
-    userDetail = oldDetails
-    display()
+  var oldDetails = JSON.parse(localStorage.getItem("localDetails"));
+  userDetail = oldDetails;
+  display();
 }
+
 
 // userDetail =  JSON.parse(localStorage.getItem('localScore'))
 function saveNames() {
   if (userNameInput.value == "") {
     changeNameAlertTxt.innerHTML = `<i class="fas fa-warning" id="faWarning"></i> Kindly enter your name below and hit "Save changes" button to save your name or hit "Close" icon to continue using default name`;
   } else if (userNameInput.value != "") {
-    changeNameAlertTxt.innerHTML = ``
+    changeNameAlertTxt.innerHTML = ``;
     var allPlayers = {
-      myName : userNameInput.value,
-      computerName : computerNameInput.value,
+      myName: userNameInput.value,
+      computerName: computerNameInput.value,
+    };
+    userDetail.push(allPlayers);
+    localStorage.setItem("localDetails", JSON.stringify(userDetail));
+    // welcomeName.innerHTML = allPlayers.myName;
+    changeNameModal.style.display = "none";
   }
-  userDetail.push(allPlayers);
-  localStorage.setItem('localDetails', JSON.stringify(userDetail))
-  // welcomeName.innerHTML = allPlayers.myName;
-  changeNameModal.style.display = "none";
-  }
-  display()
+  display();
 }
-
-
 
 // Function that get or display userName and ComputerName
 
@@ -37,14 +35,27 @@ function display() {
   }
 }
 
-
-
 // function to set loading timeout
 
 function next() {
-  oldScore =  JSON.parse(localStorage.getItem('localScore'))
-  playBtn.disabled = true;
-  loading.innerHTML = `
+  if (welcomeName.innerHTML == "") {
+    Swal.fire({
+      title:
+        'Kindly Register your name before continue. <br/> Click "SETTINGS" button below and from the options, <br/> click "Change Names button and then save changes"',
+      showClass: {
+        popup: "animate__animated animate__fadeInDown",
+      },
+      hideClass: {
+        popup: "animate__animated animate__fadeOutUp",
+      },
+      customClass: {
+        title: "my-popup-title",
+      },
+    });
+  } else {
+    oldScore = JSON.parse(localStorage.getItem("localScore"));
+    playBtn.disabled = true;
+    loading.innerHTML = `
                         <div class="loading-container" type="button" disabled>
                             <span class="spinner-border spinner-border-lg" role="status" aria-hidden="true" id="spinnerBorder"></span>
                             <h3 id="waitTxt">Game Loading, Please wait...</h3>
@@ -53,20 +64,18 @@ function next() {
                             <div id="myBar" class="progress-bar" role="progressbar" aria-label="Example with label" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
                         </div>
                     `;
-  let waitingTime = setInterval(function () {
-    if (true) {
-      window.location.href = "rockPaperScissorsGame.html";
-      // clearInterval(waitingTime);
-    } else {
-    }
-  }, 5000);
-  move();
+    let waitingTime = setInterval(function () {
+      if (true) {
+        window.location.href = "rockPaperScissorsGame.html";
+        // clearInterval(waitingTime);
+      } else {
+      }
+    }, 5000);
+    move();
+  }
 }
 
-
-
-
-// function to make progress bar width 
+// function to make progress bar width
 
 function move() {
   var elem = document.getElementById("myBar");
@@ -89,31 +98,25 @@ function move() {
   }
 }
 
-
-
-
-
 // function to close SaveNameModal
 
 function openSaveNameModal() {
   changeNameModal.style.display = "block";
-  myModal.style.display = "none"
+  myModal.style.display = "none";
 }
 function closeSaveNameModal() {
   changeNameModal.style.display = "none";
-  rulesModal.style.display = "none"
+  rulesModal.style.display = "none";
 }
-window.onclick = function(event) {
+window.onclick = function (event) {
   if (event.target == changeNameModal) {
     changeNameModal.style.display = "none";
   }
-}
-
-
+};
 
 // function to show rules of the game
 
 function rules() {
-  rulesModal.style.display = "block"; 
-  myModal.style.display = "none"
+  rulesModal.style.display = "block";
+  myModal.style.display = "none";
 }
