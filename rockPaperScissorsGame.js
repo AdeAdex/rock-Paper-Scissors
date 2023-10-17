@@ -189,10 +189,14 @@ function soundPlay() {
         disp4.innerHTML = `${userDetail[index].computerName} wins`;
         you.value++;
         winSound.play();
+        mainContainer.style.backgroundImage =
+                "url('pic/firework-6-unscreen.gif')";
       } else if (myScore.value > computerScore.value) {
         disp4.innerHTML = `${userDetail[index].myName} wins`;
         me.value++;
         winSound.play();
+        mainContainer.style.backgroundImage =
+                "url('pic/firework-6-unscreen.gif')";
       } else {
         disp4.innerHTML = `${userDetail[index].myName} and ${userDetail[index].computerName} draw`;
         drawSound.play();
