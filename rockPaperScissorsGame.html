@@ -1,60 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="fontawesome-free-6.1.1-web/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="rockPaperScissorsGame.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="fontawesome-free-6.1.1-web/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="rockPaperScissorsGame.css" />
     <title>Rock Paper Scissors</title>
-</head>
-<body onload="playMusic()">
+  </head>
+  <body onload="playMusic()">
     <div class="main">
-        <div class="main-container" id="mainContainer">
-          <div class="volume">
-            <i class="fas fa-volume-xmark" onclick="stopMusic(this)"></i>
+      <div class="main-container" id="mainContainer">
+        <div class="volume">
+          <i class="fas fa-volume-xmark" onclick="stopMusic(this)"></i>
+        </div>
+        <div class="screen-container">
+          <h2>
+            <span>Rock</span>
+            <span>paper</span>
+            <span>scissors</span>
+          </h2>
+          <div class="screen">
+            <h3 class="screen-h3">SCORES</h3>
+            <div class="total">
+              Rounds
+              <h4 id="totalClickResult"></h4>
+            </div>
+            <div class="scores">
+              <div class="user">
+                <span><i class="fas fa-user-large"></i></span
+                ><input
+                  type="number"
+                  name=""
+                  id="myScore"
+                  value="0"
+                  disabled=""
+                />
+                <input type="number" name="" value="0" id="me" disabled="" />
+              </div>
+              <div class="comp">
+                <span><i class="fas fa-desktop"></i></span
+                ><input
+                  type="number"
+                  name=""
+                  id="computerScore"
+                  value="0"
+                  disabled=""
+                /><input type="number" name="" value="0" id="you" disabled="" />
+              </div>
+            </div>
           </div>
-            <div class="screen-container">
-                <h1>
-                    <span>Rock</span> 
-                    <span>paper</span> 
-                    <span>scissors</span> 
-                </h1>
-                <div class="screen">
-                    <h2>SCORES</h2>
-                    <div class="total">Total<h3 id="totalClickResult"></h3></div>
-                    <div class="scores">
-                        <div class="user"><span><i class="fas fa-user-large"></i></span><input type="number" name="" id="myScore" value="0" disabled=""> <input type="number" name="" value="0" id="me" disabled=""></div>
-                        <div class="comp"><span><i class="fas fa-desktop"></i></span><input type="number" name="" id="computerScore" value="0" disabled=""><input type="number" name="" value="0" id="you" disabled=""></div>
-                    </div>
-                </div>
-                
-            </div>      
-            <div class="g-area" id="gArea">
-                <div class="avatar">
-                    <img src="pic/avatar.png" alt="" id="img1">
-                    <img src="pic/images (18).jpeg" alt="" id="img2">
-                </div>
-                <div class="result-area">
-                    <div id="disp"></div>
-                    <div id="disp2"></div>
-                </div>
-                <div id="disp3"></div>
-                <!-- <div id="ani" class="dist"> -->
-                    <!-- <img src="pic/fire.gif" alt="" > -->
-                    <img src="pic/giphy-unscreen.gif" alt="" class="dist" id="dist">
-                <!-- </div> -->
-                <div id="disp4"></div>
-            </div>
-            
-            <div class="my-btn">
-                <button onclick="rock()">Rock</button>
-                <button onclick="paper()">Paper</button>
-                <button onclick="scissors()">Scissors</button>
-            </div>
-        </div>    
+        </div>
+        <div class="g-area" id="gArea">
+          <div class="avatar">
+            <img src="pic/avatar.png" alt="" id="img1" />
+            <img src="pic/images (18).jpeg" alt="" id="img2" />
+          </div>
+          <div class="result-area">
+            <div id="disp"></div>
+            <div id="disp2"></div>
+          </div>
+          <div id="disp3"></div>
+          <!-- <div id="ani" class="dist"> -->
+          <!-- <img src="pic/fire.gif" alt="" > -->
+          <img src="pic/giphy-unscreen.gif" alt="" class="dist" id="dist" />
+          <!-- </div> -->
+          <div id="disp4"></div>
+          <div class="my-btn">
+            <button onclick="rock()">Rock</button>
+            <button onclick="paper()">Paper</button>
+            <button onclick="scissors()">Scissors</button>
+          </div>
+        </div>
+
+        
+      </div>
     </div>
 
     <script src="rockPaperScissorsGame.js"></script>
-</body>
+  </body>
 </html>
