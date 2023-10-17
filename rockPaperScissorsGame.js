@@ -132,45 +132,87 @@ function scissors() {
 
 // All Sound Function that is triggered when either user or computer wins and also work for TotalClick
 
+// userDetail = JSON.parse(localStorage.getItem("localDetails"));
+// function soundPlay() {
+//   totalClick += 1;
+//   totalClickResult.innerHTML = totalClick;
+//   for (let index = 0; index < userDetail.length; index++) {
+//     disp.innerHTML = `${userDetail[index].myName} PICKED`;
+//     disp2.innerHTML = `${userDetail[index].computerName} PICKED`;
+//     if (totalClick === 5 && (computerScore.value > myScore.value)) {
+//       disp4.innerHTML = `${userDetail[index].computerName} win`;
+//       you.value++;
+//       winSound.play();
+//       mainContainer.style.backgroundImage =
+//         "url('pic/firework-6-unscreen.gif')";
+//       return (totalClick = 0), (computerResult = 0), (myScore = 0);
+//     } else if (totalClick === 5 && myScore.value > computerScore.value) {
+//       disp4.innerHTML = `${userDetail[index].myName} win`;
+//       disp4.style.backgroundImage = "ur('pic/congrats2.gif)";
+//       me.value++;
+//       winSound.play();
+//       mainContainer.style.backgroundImage =
+//         "url('pic/firework-6-unscreen.gif')";
+//       return (totalClick = 0), (userResult = 0);
+//     } else if (totalClick === 5 && myScore.value === computerScore.value) {
+//       disp4.innerHTML = `${userDetail[index].myName} and ${userDetail[index].computerName} draw`;
+//       drawSound.play();
+//       return (totalClick = 0), (computerResult = 0), (userResult = 0);
+//     } else if (
+//       totalClick === 5 &&
+//       (myScore.value < computerScore.value ||
+//         computerScore.value < myScore.value)
+//     ) {
+//       return (userResult = 0), (computerResult = 0);
+//     } else {
+//       clickSound.play();
+//       mainContainer.style.backgroundImage = "url('')";
+//     }
+//   }
+//   localStorage.setItem("localScore", JSON.stringify(userScore));
+// }
+
+
+// All Sound Function that is triggered when either the user or computer wins and also works for TotalClick
 userDetail = JSON.parse(localStorage.getItem("localDetails"));
+
 function soundPlay() {
   totalClick += 1;
   totalClickResult.innerHTML = totalClick;
   for (let index = 0; index < userDetail.length; index++) {
     disp.innerHTML = `${userDetail[index].myName} PICKED`;
     disp2.innerHTML = `${userDetail[index].computerName} PICKED`;
-    if (totalClick === 5 && computerScore.value > myScore.value) {
-      disp4.innerHTML = `${userDetail[index].computerName} win`;
-      you.value++;
-      winSound.play();
-      mainContainer.style.backgroundImage =
-        "url('pic/firework-6-unscreen.gif')";
-      return (totalClick = 0), (computerResult = 0);
-    } else if (totalClick === 5 && myScore.value > computerScore.value) {
-      disp4.innerHTML = `${userDetail[index].myName} win`;
-      disp4.style.backgroundImage = "ur('pic/congrats2.gif)";
-      me.value++;
-      winSound.play();
-      mainContainer.style.backgroundImage =
-        "url('pic/firework-6-unscreen.gif')";
-      return (totalClick = 0), (userResult = 0);
-    } else if (totalClick === 5 && myScore.value === computerScore.value) {
-      disp4.innerHTML = `${userDetail[index].myName} and ${userDetail[index].computerName} draw`;
-      drawSound.play();
-      return (totalClick = 0), (computerResult = 0), (userResult = 0);
-    } else if (
-      totalClick === 5 &&
-      (myScore.value < computerScore.value ||
-        computerScore.value < myScore.value)
-    ) {
-      return (userResult = 0), (computerResult = 0);
+
+    // Check if totalClick is 5
+    if (totalClick === 5) {
+      if (computerScore.value > myScore.value) {
+        disp4.innerHTML = `${userDetail[index].computerName} wins`;
+        you.value++;
+        winSound.play();
+      } else if (myScore.value > computerScore.value) {
+        disp4.innerHTML = `${userDetail[index].myName} wins`;
+        me.value++;
+        winSound.play();
+      } else {
+        disp4.innerHTML = `${userDetail[index].myName} and ${userDetail[index].computerName} draw`;
+        drawSound.play();
+      }
+
+      // Reset counts
+      totalClick = 0;
+      userResult = 0;
+      computerResult = 0;
+
+      return;
     } else {
       clickSound.play();
       mainContainer.style.backgroundImage = "url('')";
     }
   }
+
   localStorage.setItem("localScore", JSON.stringify(userScore));
 }
+
 
 //Sound Function that is triggered onload of the page
 
