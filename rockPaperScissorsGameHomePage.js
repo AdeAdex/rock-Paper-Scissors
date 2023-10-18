@@ -127,6 +127,9 @@ function resetGame() {
   localStorage.removeItem("localDetails");
   localStorage.removeItem("localScore");
   localStorage.setItem("backgroundColor", "rgb(0, 0, 42)");
+  localStorage.removeItem("computerRound")
+  localStorage.removeItem("userRound")
+  localStorage.removeItem("totalRound")
   location.reload();
 }
 
