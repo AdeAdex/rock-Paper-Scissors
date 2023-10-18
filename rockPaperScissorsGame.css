@@ -80,19 +80,15 @@ body {
   padding: 0px 2px;
 }
 
-.screen-h3 {
-  width: 100%;
-  position: absolute;
-  margin: 0px auto;
-  color: rgb(4, 4, 87);
-}
+
 
 .total {
   display: flex;
-  margin-top: 20px;
+  margin-top: 3px;
   justify-content: space-between;
   color: rgb(4, 4, 87);
   font-size: 12px;
+  padding-left: 8px;
 }
 
 .total h4 {
@@ -101,19 +97,26 @@ body {
   height: 18px;
 }
 
+hr {
+margin-bottom: -5px;
+}
+
+.screen-small {
+  width: 100%;
+  color: rgb(4, 4, 87);
+  font-size: 10px;
+}
+
 .scores {
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  margin-top: -5px;
-  /* background-color: green; */
+  margin-top: -3px;
 }
 .scores span {
   width: 30%;
   margin: auto 5px;
-  /* border: 1px solid green; */
-  /* background-color: red; */
 }
 i {
   color: blue;
