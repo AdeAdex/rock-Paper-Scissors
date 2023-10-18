@@ -9,13 +9,13 @@
     <link rel="stylesheet" href="bootstrap.css" />
     <link rel="stylesheet" href="bootstrap.min.css" />
     <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <link
-    href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css"
-    rel="stylesheet"
-  />
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css"
+      rel="stylesheet"
+    />
     <title>Rock Paper Scissors</title>
   </head>
 
@@ -114,55 +114,67 @@
                   class="rules-modal-close"
                   id="closeBtn"
                   onclick="closeSaveNameModal()"
-                  >&times;</button
                 >
+                  &times;
+                </button>
               </div>
               <div class="rules-modal-body">
                 <h3>Overview</h3>
                 This game is played by children and adults and is popular all
-                over the world. Apart from being a game played to pass time, the
+                over the world. Apart from being a game played to pass the time, the
                 game is usually played in situations where something has to be
                 chosen. It is similar in that way to other games like flipping
-                the coin, throwing dice or drawing straws. There is no room for
+                the coin, throwing dice, or drawing straws. There is no room for
                 cheating or for knowing what the other person is going to do so
                 the results are usually very satisfying with no room for
                 fighting or error.
-                
+            
                 <h3>How To Play</h3>
-                 Before playing the game, ensure you register a name for yourself and your Opponent (Computer) then: <p>
-                 Make your choice by clicking on any of the three (3) button (Rock, Paper or Scissors ) and upon any of your choice, computer choice will be generated automatically. </p>
-                 The winner of the first round will be decided after five (5) click. Meaning that if you click any of the three buttons for the first time, both your choice and computer choice is recorded and for you to know who beat the other on the first, second, third, fourth and fifth click, a floating icon is displayed with +1 which denotes that the user that got the +1 icon is gaining advantage of winning the game after the fifth click , and until after the fifth time of click, then the winner is decided checking who has the highest +1 icon and the winner is congratulated 
-                 <p>Note: After the first round, every score is reset and the next round start following the same rules of how to play. 
-                 This game as at the moment of developing it, doesn't support multiple players, it can only be played by one player and the opponent as Computer. </p>
-                 
-
-
+                Before playing the game, ensure you register a name for yourself:
+                <p>
+                    Make your choice by clicking on any of the three (3) buttons
+                    (Rock, Paper, or Scissors) and upon any of your choices,
+                    the computer's choice will be generated automatically.
+                </p>
+                The winner of the first round will be decided after five (5)
+                rounds. Meaning that if you click any of the three buttons for
+                the first time, both your choice and the computer's choice are recorded.
+                To know who beat the other on the first, second, third, fourth, and fifth rounds,
+                a floating icon is displayed with +1 which denotes that the user that got the +1 icon is gaining
+                an advantage of winning the game. This can also be seen on the score board after the fifth round,
+                and until after the fifth round,when then the winner is decided.
+                The winner is determined by checking who has the highest +1 icon, and the winner is congratulated.
+                <p>
+                    Note: After every fifth round, every score is reset, and the next
+                    round starts following the same rules of how to play. This game,
+                    as of the moment of development, doesn't support multiple
+                    players. It can only be played by one player against the opponent, which is the Computer.
+                </p>
+            
                 <h3>Instructions</h3>
-                Rock Paper Scissors is a two player game. The objective is to
-                select a play (i.e Rock, Paper or Scissors) that defeat your
-                opponent's play
+                Rock Paper Scissors is a two-player game. The objective is to
+                select a play (i.e., Rock, Paper, or Scissors) that defeats your
+                opponent's play.
                 <ul>
-                  <li>
-                    If one player picks rock and one scissors, the player who
-                    pick Rock wins the dispute
-                    <p>Rock Smashes Scissors, Rock Win</p>
-                  </li>
-                  <li>
-                    If one player picks scissors and the other paper, the player
-                    who showed scissors succeeds.
-                    <p>Scissors cut Paper, Scissors Win</p>
-                  </li>
-                  <li>
-                    If a player shows paper while the other shows rock, the
-                    player who picked paper succeeds.
-                    <p>Paper covers Rock, Paper Win</p>
-                  </li>
-                  <li>
-                    If the play is the same, nobody win, It's a tie. 
-                    <p>Play again to win</p>
-                  </li>
+                    <li>
+                        If one player picks rock and the other picks scissors, the player who picked Rock wins the dispute.
+                        <p>Rock Smashes Scissors, Rock Wins.</p>
+                    </li>
+                    <li>
+                        If one player picks scissors and the other picks paper, the player who chose scissors succeeds.
+                        <p>Scissors Cut Paper, Scissors Win.</p>
+                    </li>
+                    <li>
+                        If a player shows paper while the other shows rock, the player who picked paper succeeds.
+                        <p>Paper Covers Rock, Paper Wins.</p>
+                    </li>
+                    <li>
+                        If the plays are the same, nobody wins, it's a tie.
+                        <p>Play again to win.</p>
+                    </li>
                 </ul>
-              </div>
+            </div>
+            
             </div>
           </div>
         </div>
@@ -187,7 +199,9 @@
           <button onclick="advanced()">
             <i class="fas fa-audio-description"></i> <span>advanced</span>
           </button>
-          <button onclick="resetGame()"><i class="fas fa-refresh"></i> <span>reset</span></button>
+          <button onclick="resetGame()">
+            <i class="fas fa-refresh"></i> <span>reset</span>
+          </button>
         </footer>
       </div>
     </div>

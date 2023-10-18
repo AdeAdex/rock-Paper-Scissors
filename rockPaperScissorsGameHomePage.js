@@ -41,7 +41,7 @@ function next() {
   if (welcomeName.innerHTML == "") {
     Swal.fire({
       title:
-        'Kindly Register your name before continue. <br/> Click "SETTINGS" button below and from the options, <br/> click "Change Names button and then save changes"',
+        'Kindly register your name before continuing. <br/> Click the "SETTINGS" button below, and from the options, <br/> click the "Change Names" button, and then save the changes.',
       showClass: {
         popup: "animate__animated animate__fadeInDown",
       },
