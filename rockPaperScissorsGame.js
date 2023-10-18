@@ -34,6 +34,8 @@ function rock() {
     disp4.innerHTML = `its a tie`;
     img1.src = "pic/rock.svg";
     img2.src = "pic/rock.svg";
+    console.log("draw", computerResult, userResult,  computerScore.value, myScore.value);
+
   } else if (computerValue == `paper`) {
     disp3.innerHTML = `${userValue} cover by ${computerValue}`;
     disp4.innerHTML = ``;
@@ -43,6 +45,7 @@ function rock() {
     computerScore.value = computerResult;
     dist.style.right = "0";
     ani();
+    console.log("comp", computerResult, userResult,  computerScore.value, myScore.value);
   } else if (computerValue == `scissors`) {
     disp3.innerHTML = `${userValue} crushes ${computerValue}`;
     disp4.innerHTML = ``;
@@ -52,6 +55,8 @@ function rock() {
     myScore.value = userResult;
     dist.style.right = "";
     ani();
+    console.log("user", computerResult, userResult,  computerScore.value, myScore.value);
+
   }
   //   display();
   soundPlay();
@@ -142,14 +147,14 @@ function soundPlay() {
 
     // Check if totalClick is 5
     if (totalClick === 5) {
-      if (computerScore.value > myScore.value) {
+      if (computerResult > userResult) {
         disp4.innerHTML = `${userDetail[index].computerName} wins`;
         you.value++;
         localStorage.setItem("youValue", you.value); // Save 'you.value' in localStorage
         winSound.play();
         mainContainer.style.backgroundImage =
           "url('pic/firework-6-unscreen.gif')";
-      } else if (myScore.value > computerScore.value) {
+      } else if (userResult > computerResult) {
         disp4.innerHTML = `${userDetail[index].myName} wins`;
         me.value++;
         localStorage.setItem("meValue", me.value); // Save 'me.value' in localStorage
@@ -164,6 +169,8 @@ function soundPlay() {
       totalClick = 0;
       userResult = 0;
       computerResult = 0;
+      
+
 
       return;
     } else {
