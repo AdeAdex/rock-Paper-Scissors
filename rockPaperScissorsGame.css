@@ -73,14 +73,15 @@ body {
   /* background-color: green; */
 }
 .screen-container h2 {
-  width: 35%;
+  width: 40%;
   display: grid;
   text-align: left;
   color: aliceblue;
+  /* background-color: red; */
 }
 
 .screen {
-  width: 40%;
+  width: 50%;
   height: 100%;
   background-color: white;
   border-radius: 10px;
@@ -105,14 +106,17 @@ body {
   height: 18px;
 }
 
-hr {
-margin-bottom: -5px;
-}
+/* hr {
+margin-bottom: ;
+} */
 
 .screen-small {
   width: 100%;
   color: rgb(4, 4, 87);
   font-size: 10px;
+  display: flex;
+  justify-content: space-around;
+  /* gap: 12px; */
 }
 
 .scores {
@@ -335,9 +339,9 @@ button {
     height: 18px;
   }
   
-  hr {
+  /* hr {
   margin-bottom: -2px;
-  }
+  } */
 
   .scores {
     width: 100%;

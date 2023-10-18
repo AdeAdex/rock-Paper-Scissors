@@ -34,7 +34,6 @@ function rock() {
     disp4.innerHTML = `its a tie`;
     img1.src = "pic/rock.svg";
     img2.src = "pic/rock.svg";
-    console.log("draw", computerResult, userResult,  computerScore.value, myScore.value);
 
   } else if (computerValue == `paper`) {
     disp3.innerHTML = `${userValue} cover by ${computerValue}`;
@@ -42,22 +41,26 @@ function rock() {
     img1.src = "pic/rock.svg";
     img2.src = "pic/paper.gif";
     computerResult += 1;
-    computerScore.value = computerResult;
     dist.style.right = "0";
     ani();
-    console.log("comp", computerResult, userResult,  computerScore.value, myScore.value);
   } else if (computerValue == `scissors`) {
     disp3.innerHTML = `${userValue} crushes ${computerValue}`;
     disp4.innerHTML = ``;
     img1.src = "pic/rock.svg";
     img2.src = "pic/scissors.gif";
     userResult += 1;
-    myScore.value = userResult;
     dist.style.right = "";
     ani();
-    console.log("user", computerResult, userResult,  computerScore.value, myScore.value);
-
+    
   }
+
+  localStorage.setItem("computerRound", computerResult)
+    computerScore.value =  parseInt(localStorage.getItem("computerRound"));
+
+    localStorage.setItem("userRound", userResult)
+    myScore.value =  parseInt(localStorage.getItem("userRound"));
+
+  // console.log("user store " + userResult, "comp store " + computerResult,  "user screen " + myScore.value, "comp screen " + computerScore.value);
   //   display();
   soundPlay();
   allUserScore();
@@ -81,7 +84,7 @@ function paper() {
     img1.src = "pic/paper.gif";
     img2.src = "pic/rock.svg";
     userResult += 1;
-    myScore.value = userResult;
+    // myScore.value = userResult;
     dist.style.right = "";
     ani();
   } else if (computerValue == `scissors`) {
@@ -90,10 +93,15 @@ function paper() {
     img1.src = "pic/paper.gif";
     img2.src = "pic/scissors.gif";
     computerResult += 1;
-    computerScore.value = computerResult;
+    // computerScore.value = computerResult;
     dist.style.right = "0";
     ani();
   }
+  localStorage.setItem("computerRound", computerResult)
+    computerScore.value =  parseInt(localStorage.getItem("computerRound"));
+
+    localStorage.setItem("userRound", userResult)
+    myScore.value =  parseInt(localStorage.getItem("userRound"));
   //   display();
   soundPlay();
   allUserScore();
@@ -117,7 +125,7 @@ function scissors() {
     img1.src = "pic/scissors.gif";
     img2.src = "pic/rock.svg";
     computerResult += 1;
-    computerScore.value = computerResult;
+    // computerScore.value = computerResult;
     dist.style.right = "0";
     ani();
   } else if (computerValue == `paper`) {
@@ -126,10 +134,15 @@ function scissors() {
     img1.src = "pic/scissors.gif";
     img2.src = "pic/paper.gif";
     userResult += 1;
-    myScore.value = userResult;
+    // myScore.value = userResult;
     dist.style.right = "";
     ani();
   }
+  localStorage.setItem("computerRound", computerResult)
+    computerScore.value =  parseInt(localStorage.getItem("computerRound"));
+
+    localStorage.setItem("userRound", userResult)
+    myScore.value =  parseInt(localStorage.getItem("userRound"));
   //   display();
   soundPlay();
   allUserScore();
@@ -140,7 +153,8 @@ userDetail = JSON.parse(localStorage.getItem("localDetails"));
 
 function soundPlay() {
   totalClick += 1;
-  totalClickResult.innerHTML = totalClick;
+  localStorage.setItem("totalRound", totalClick)
+  totalClickResult.innerHTML = parseInt(localStorage.getItem("totalRound"));;
   for (let index = 0; index < userDetail.length; index++) {
     disp.innerHTML = `${userDetail[index].myName} PICKED`;
     disp2.innerHTML = `${userDetail[index].computerName} PICKED`;
@@ -196,6 +210,15 @@ function playMusic() {
 
   you.value = parseInt(localStorage.getItem("youValue")) || 0;
       me.value = parseInt(localStorage.getItem("meValue")) || 0;
+
+
+    computerScore.value =  parseInt(localStorage.getItem("computerRound")) || 0;
+
+    myScore.value =  parseInt(localStorage.getItem("userRound")) || 0;
+
+
+    totalClickResult.innerHTML = parseInt(localStorage.getItem("totalRound")) || 0;
+ 
       
 }
 
