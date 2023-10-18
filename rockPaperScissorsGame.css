@@ -27,18 +27,26 @@ body {
   margin: auto;
   background-color: rgb(1, 1, 50);
   padding: 10px 20px 80px 20px;
-  /* background-image: url(pic/firework-6-unscreen.gif); */
   background-repeat: no-repeat;
   background-size: 100% 100%;
   border-radius: 5px;
 }
 .volume {
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
   /* height: 8%; */
   /* background-color: yellow; */
   padding-bottom: 6px;
 }
+
+.home-btn {
+  background-color: black;
+  border-radius: 5px;
+  padding: 3px 10px;
+  height: auto;
+  width: auto;
+}
+
 .fa-volume-xmark,
 .fa-volume-high {
   font-size: 25px;

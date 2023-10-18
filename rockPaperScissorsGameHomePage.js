@@ -7,7 +7,6 @@ if (localStorage.localDetails) {
   display();
 }
 
-
 // userDetail =  JSON.parse(localStorage.getItem('localScore'))
 function saveNames() {
   if (userNameInput.value == "") {
@@ -119,4 +118,71 @@ window.onclick = function (event) {
 function rules() {
   rulesModal.style.display = "block";
   myModal.style.display = "none";
+}
+function resetGame() {
+  localStorage.removeItem("youValue");
+  localStorage.removeItem("meValue");
+  localStorage.removeItem("localDetails");
+  localStorage.removeItem("localScore");
+  localStorage.setItem("backgroundColor", "rgb(0, 0, 42)");
+}
+
+function advanced() {
+  Swal.fire({
+    title: "Advanced Level Coming Soon",
+    showClass: {
+      popup: "animate__animated animate__fadeInDown",
+    },
+    hideClass: {
+      popup: "animate__animated animate__fadeOutUp",
+    },
+    customClass: {
+      title: "my-popup-title",
+    },
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Retrieve the selected background color from localStorage, or use the default color
+  const selectedBackgroundColor =
+    localStorage.getItem("backgroundColor") || "rgb(0, 0, 42)";
+  document.querySelector(".main").style.backgroundColor =
+    selectedBackgroundColor;
+});
+
+function configuration() {
+  Swal.fire({
+    title: "Select Background Color",
+    html: `
+<div style="text-align: center;">
+  <button class="color-button" onclick="changeBackgroundColor('rgb(0, 0, 42)')" style="background-color: rgb(0, 0, 42); color: white;">Default Color</button>
+  <button class="color-button" onclick="changeBackgroundColor('red')" style="background-color: red; color: white;">Red</button>
+  <button class="color-button" onclick="changeBackgroundColor('blue')" style="background-color: blue; color: white;">Blue</button>
+  <button class="color-button" onclick="changeBackgroundColor('green')" style="background-color: green; color: white;">Green</button>
+  <button class="color-button" onclick="changeBackgroundColor('yellow')" style="background-color: yellow; color: black;">Yellow</button>
+  <button class="color-button" onclick="changeBackgroundColor('orange')" style="background-color: orange; color: black;">Orange</button>
+  <button class="color-button" onclick="changeBackgroundColor('purple')" style="background-color: purple; color: white;">Purple</button>
+  <button class="color-button" onclick="changeBackgroundColor('pink')" style="background-color: pink; color: black;">Pink</button>
+</div>
+<button id="okButton" onclick="confirmBackgroundColor()">OK</button>
+`,
+
+    showConfirmButton: false, // Hide the default "OK" button
+    backdrop: `
+      rgba(0,0,123,0.4)
+      url("/images/nyan-cat.gif")
+      left top
+      no-repeat
+    `,
+  });
+}
+
+function changeBackgroundColor(color) {
+  document.querySelector(".main").style.backgroundColor = color;
+  localStorage.setItem("backgroundColor", color); // Store the selected background color in localStorage
+  document.getElementById("okButton").style.display = "block"; // Show the "OK" button
+}
+
+function confirmBackgroundColor() {
+  Swal.close(); // Close the dialog
 }

@@ -37,7 +37,7 @@
                 <div class="modal-body">
                   <button>Settings</button>
                   <button onclick="rules()">Rules</button>
-                  <button>Configuration</button>
+                  <button onclick="configuration()">Configuration</button>
                   <button id="modalBtn" onclick="openSaveNameModal()">
                     Change Names
                   </button>
@@ -183,10 +183,10 @@
           <button data-bs-toggle="modal" data-bs-target="#myModal">
             <i class="fas fa-gear"></i> <span>settings</span>
           </button>
-          <button>
+          <button onclick="advanced()">
             <i class="fas fa-audio-description"></i> <span>advanced</span>
           </button>
-          <button><i class="fas fa-refresh"></i> <span>reset</span></button>
+          <button onclick="resetGame()"><i class="fas fa-refresh"></i> <span>reset</span></button>
         </footer>
       </div>
     </div>

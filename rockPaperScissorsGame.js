@@ -130,7 +130,6 @@ function scissors() {
   allUserScore();
 }
 
-
 // All Sound Function that is triggered when either the user or computer wins and also works for TotalClick
 userDetail = JSON.parse(localStorage.getItem("localDetails"));
 
@@ -143,22 +142,45 @@ function soundPlay() {
 
     // Check if totalClick is 5
     if (totalClick === 5) {
+      // if (computerScore.value > myScore.value) {
+      //   disp4.innerHTML = `${userDetail[index].computerName} wins`;
+      //   you.value++;
+      //   winSound.play();
+      //   mainContainer.style.backgroundImage =
+      //           "url('pic/firework-6-unscreen.gif')";
+      // } else if (myScore.value > computerScore.value) {
+      //   disp4.innerHTML = `${userDetail[index].myName} wins`;
+      //   me.value++;
+      //   winSound.play();
+      //   mainContainer.style.backgroundImage =
+      //           "url('pic/firework-6-unscreen.gif')";
+      // } else {
+      //   disp4.innerHTML = `${userDetail[index].myName} and ${userDetail[index].computerName} draw`;
+      //   drawSound.play();
+      // }
+
+      // When incrementing 'you.value' and 'me.value'
       if (computerScore.value > myScore.value) {
         disp4.innerHTML = `${userDetail[index].computerName} wins`;
         you.value++;
+        localStorage.setItem("youValue", you.value); // Save 'you.value' in localStorage
         winSound.play();
         mainContainer.style.backgroundImage =
-                "url('pic/firework-6-unscreen.gif')";
+          "url('pic/firework-6-unscreen.gif')";
       } else if (myScore.value > computerScore.value) {
         disp4.innerHTML = `${userDetail[index].myName} wins`;
         me.value++;
+        localStorage.setItem("meValue", me.value); // Save 'me.value' in localStorage
         winSound.play();
         mainContainer.style.backgroundImage =
-                "url('pic/firework-6-unscreen.gif')";
+          "url('pic/firework-6-unscreen.gif')";
       } else {
         disp4.innerHTML = `${userDetail[index].myName} and ${userDetail[index].computerName} draw`;
         drawSound.play();
       }
+
+      // Initialize 'you.value' and 'me.value' from localStorage on page load
+      
 
       // Reset counts
       totalClick = 0;
@@ -175,11 +197,21 @@ function soundPlay() {
   localStorage.setItem("localScore", JSON.stringify(userScore));
 }
 
-
 //Sound Function that is triggered onload of the page
 
 function playMusic() {
   backgroundMusic.play();
+
+  const selectedBackgroundColor =
+        localStorage.getItem("backgroundColor") || "rgb(0, 0, 42)";
+
+    // Apply the selected background color to the main-container
+    document.querySelector(".main-container").style.backgroundColor =
+        selectedBackgroundColor;
+
+  you.value = parseInt(localStorage.getItem("youValue")) || 0;
+      me.value = parseInt(localStorage.getItem("meValue")) || 0;
+      
 }
 
 // Function that triggered both PlayMusic and stopMusic
@@ -194,9 +226,7 @@ function stopMusic(x) {
   }
 }
 
-
-
-// Function that triggered plus 1 animation 
+// Function that triggered plus 1 animation
 
 // const dist = document.getElementById("dist");
 function ani() {
@@ -204,4 +234,9 @@ function ani() {
   setTimeout(function () {
     dist.classList.add("animation");
   }, 10);
+}
+
+
+function goHome() {
+  window.location.href = 'index.html';
 }
