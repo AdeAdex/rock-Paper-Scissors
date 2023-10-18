@@ -164,6 +164,7 @@ function configuration() {
   <button class="color-button" onclick="changeBackgroundColor('yellow')" style="background-color: yellow; color: black;">Yellow</button>
   <button class="color-button" onclick="changeBackgroundColor('orange')" style="background-color: orange; color: black;">Orange</button>
   <button class="color-button" onclick="changeBackgroundColor('purple')" style="background-color: purple; color: white;">Purple</button>
+  <button class="color-button" onclick="changeBackgroundColor('black')" style="background-color: black; color: white;">black</button>
   <button class="color-button" onclick="changeBackgroundColor('pink')" style="background-color: pink; color: black;">Pink</button>
 </div>
 <button id="okButton" onclick="confirmBackgroundColor()">OK</button>
