@@ -430,8 +430,9 @@ footer .fas {
   padding: 10px;
   background-color: darkcyan;
   border-radius: 10px;
+  justify-content: space-around;
 }
-.name-input h3 {
+.name-input h4 {
   margin-right: 5px;
   width: 30%;
   margin: auto 0px;
@@ -444,7 +445,7 @@ footer .fas {
   background-color: black;
   color: white;
   text-transform: uppercase;
-  width: 70%;
+  width: 60%;
 }
 
 .save-change {

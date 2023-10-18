@@ -13,13 +13,14 @@ function saveNames() {
     changeNameAlertTxt.innerHTML = `<i class="fas fa-warning" id="faWarning"></i> Kindly enter your name below and hit "Save changes" button to save your name or hit "Close" icon to continue using default name`;
   } else if (userNameInput.value != "") {
     changeNameAlertTxt.innerHTML = ``;
-    var allPlayers = {
+    var updatedDetails = {
       myName: userNameInput.value,
       computerName: computerNameInput.value,
     };
-    userDetail.push(allPlayers);
+
+    userDetail = [updatedDetails];
+
     localStorage.setItem("localDetails", JSON.stringify(userDetail));
-    // welcomeName.innerHTML = allPlayers.myName;
     changeNameModal.style.display = "none";
   }
   display();
