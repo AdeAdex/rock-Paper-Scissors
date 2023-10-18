@@ -119,12 +119,14 @@ function rules() {
   rulesModal.style.display = "block";
   myModal.style.display = "none";
 }
+
 function resetGame() {
   localStorage.removeItem("youValue");
   localStorage.removeItem("meValue");
   localStorage.removeItem("localDetails");
   localStorage.removeItem("localScore");
   localStorage.setItem("backgroundColor", "rgb(0, 0, 42)");
+  location.reload();
 }
 
 function advanced() {
