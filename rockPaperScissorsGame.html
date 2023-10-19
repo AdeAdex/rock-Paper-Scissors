@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="fontawesome-free-6.1.1-web/css/all.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="rockPaperScissorsGame.css" />
+    <link rel="stylesheet" href="bootstrap.css" />
+    <link rel="stylesheet" href="bootstrap.min.css" />
     <title>Rock Paper Scissors</title>
   </head>
   <body onload="playMusic()">
@@ -13,6 +15,7 @@
       <div class="main-container" id="mainContainer">
         <div class="volume">
           <button class="home-btn" onclick="goHome()">Home</button>
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#boardModal">Score Board</button>
           <i class="fas fa-volume-xmark" onclick="stopMusic(this)"></i>
         </div>
         <div class="screen-container">
@@ -26,29 +29,31 @@
               Total Rounds
               <h4 id="totalClickResult"></h4>
             </div>
-            <hr>
+            <hr class="hr">
             <small class="screen-small"><span>User</span><span>RS</span><span>Scores</span></small>
             <div class="scores">
               <div class="user">
-                <span><i class="fas fa-user-large"></i></span
+                <div><i class="fas fa-user-large"></i></
                 ><input
                   type="number"
                   name=""
                   id="myScore"
                   value="0"
                   disabled=""
+                  class="input"
                 />
-                <input type="number" name="" value="0" id="me" disabled="" />
+                <input type="number" class="input" name="" value="0" id="me" disabled="" />
               </div>
               <div class="comp">
-                <span><i class="fas fa-desktop"></i></span
+                <div><i class="fas fa-desktop"></i></
                 ><input
                   type="number"
                   name=""
                   id="computerScore"
                   value="0"
                   disabled=""
-                /><input type="number" name="" value="0" id="you" disabled="" />
+                  class="input"
+                /><input type="number" class="input" name="" value="0" id="you" disabled="" />
               </div>
             </div>
           </div>
@@ -69,16 +74,36 @@
           <!-- </div> -->
           <div id="disp4"></div>
           <div class="my-btn">
-            <button onclick="rock()">Rock</button>
-            <button onclick="paper()">Paper</button>
-            <button onclick="scissors()">Scissors</button>
+            <button class="action-btn" onclick="rock()">Rock</button>
+            <button class="action-btn" onclick="paper()">Paper</button>
+            <button class="action-btn" onclick="scissors()">Scissors</button>
           </div>
         </div>
 
         
       </div>
     </div>
+    
+    <div class="modal fade" id="boardModal" tabindex="-1" aria-labelledby="boardModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="boardModalLabel">Modal title</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script src="rockPaperScissorsGame.js"></script>
+    <script src="bootstrap.bundle.js"></script>
+    <script src="bootstrap.bundle.min.js"></script>
   </body>
 </html>

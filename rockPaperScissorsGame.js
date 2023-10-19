@@ -248,3 +248,9 @@ function ani() {
 function goHome() {
   window.location.href = 'index.html';
 }
+
+
+function openSaveNameModal() {
+  changeNameModal.style.display = "block";
+  // myModal.style.display = "none";
+}

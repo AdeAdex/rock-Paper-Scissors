@@ -160,17 +160,18 @@ function configuration() {
   Swal.fire({
     title: "Select Background Color",
     html: `
-<div style="text-align: center;">
-  <button class="color-button" onclick="changeBackgroundColor('rgb(0, 0, 42)')" style="background-color: rgb(0, 0, 42); color: white;">Default Color</button>
-  <button class="color-button" onclick="changeBackgroundColor('red')" style="background-color: red; color: white;">Red</button>
-  <button class="color-button" onclick="changeBackgroundColor('blue')" style="background-color: blue; color: white;">Blue</button>
-  <button class="color-button" onclick="changeBackgroundColor('green')" style="background-color: green; color: white;">Green</button>
-  <button class="color-button" onclick="changeBackgroundColor('yellow')" style="background-color: yellow; color: black;">Yellow</button>
-  <button class="color-button" onclick="changeBackgroundColor('orange')" style="background-color: orange; color: black;">Orange</button>
-  <button class="color-button" onclick="changeBackgroundColor('purple')" style="background-color: purple; color: white;">Purple</button>
-  <button class="color-button" onclick="changeBackgroundColor('black')" style="background-color: black; color: white;">black</button>
-  <button class="color-button" onclick="changeBackgroundColor('pink')" style="background-color: pink; color: black;">Pink</button>
-</div>
+    <div style="text-align: center;">
+    <button class="color-button" onclick="changeBackgroundColor('rgb(0, 0, 42')" style="background-color: rgb(0, 0, 42); color: white;">Default</button>
+    <button class="color-button" onclick="changeBackgroundColor('red')" style="background-color: red; color: white;">Red</button>
+    <button class="color-button" onclick="changeBackgroundColor('blue')" style="background-color: blue; color: white;">Blue</button>
+    <button class="color-button" onclick="changeBackgroundColor('green')" style="background-color: green; color: white;">Green</button>
+    <button class="color-button" onclick="changeBackgroundColor('yellow')" style="background-color: yellow; color: black;">Yellow</button>
+    <button class="color-button" onclick="changeBackgroundColor('orange')" style="background-color: orange; color: black;">Orange</button>
+    <button class="color-button" onclick="changeBackgroundColor('purple')" style="background-color: purple; color: white;">Purple</button>
+    <button class="color-button" onclick="changeBackgroundColor('black')" style="background-color: black; color: white;">Black</button>
+    <button class="color-button" onclick="changeBackgroundColor('pink')" style="background-color: pink; color: black;">Pink</button>
+    <button class="color-button" onclick="changeBackgroundColor('gray')" style="background-color: gray; color: white;">Gray</button>
+  </div>
 <button id="okButton" onclick="confirmBackgroundColor()">OK</button>
 `,
 

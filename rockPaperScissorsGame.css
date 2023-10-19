@@ -45,6 +45,7 @@ body {
   padding: 3px 10px;
   height: auto;
   width: auto;
+  color: white;
 }
 
 .fa-volume-xmark,
@@ -77,7 +78,8 @@ body {
   display: grid;
   text-align: left;
   color: aliceblue;
-  /* background-color: red; */
+  font-size: 25px;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .screen {
@@ -88,8 +90,6 @@ body {
   position: relative;
   padding: 0px 2px;
 }
-
-
 
 .total {
   display: flex;
@@ -104,11 +104,13 @@ body {
   color: black;
   width: 20%;
   height: 18px;
+  font-size: 12px;
 }
 
-/* hr {
-margin-bottom: ;
-} */
+.hr {
+  margin-top: -8px;
+  margin-bottom: 2px;
+}
 
 .screen-small {
   width: 100%;
@@ -128,12 +130,16 @@ margin-bottom: ;
 }
 .scores span {
   width: 30%;
-  margin: auto 5px;
+  margin: 1px 5px;
+  background-color: red;
+  padding: 0px;
 }
 i {
   color: blue;
   font-size: 12px;
+  height: 100%;
 }
+
 
 .user,
 .comp {
@@ -145,7 +151,7 @@ i {
 #myScore,
 #computerScore {
   width: 20%;
-  font-size: 15px;
+  font-size: 12px;
   text-align: right;
   border: none;
   /* visibility: hidden; */
@@ -154,7 +160,7 @@ i {
 #me,
 #you {
   width: 40%;
-  font-size: 18px;
+  font-size: 12px;
   text-align: right;
   border: none;
   padding-right: 5px;
@@ -286,7 +292,7 @@ i {
   margin-top: auto;
 }
 
-button {
+.action-btn {
   padding: 12px 5px;
   background-color: rgb(6, 46, 208);
   color: white;
@@ -316,7 +322,6 @@ button {
     padding: 0px 2px;
   }
 
-
   .screen-h3 {
     width: 100%;
     position: absolute;
@@ -332,13 +337,12 @@ button {
     font-size: 15px;
   }
 
-
   .total h4 {
     color: black;
     width: 20%;
     height: 18px;
   }
-  
+
   /* hr {
   margin-bottom: -2px;
   } */
@@ -356,7 +360,6 @@ button {
     color: rgb(4, 4, 87);
     font-size: 14px;
   }
- 
 
   .scores span {
     width: 30%;
