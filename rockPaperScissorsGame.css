@@ -191,6 +191,7 @@ i {
   height: 90px;
   border-radius: 50%;
   border: 3px solid red;
+  cursor: pointer;
 }
 
 .avatar #img2 {
