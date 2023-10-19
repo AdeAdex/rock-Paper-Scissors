@@ -130,8 +130,7 @@ body {
 }
 .scores span {
   width: 30%;
-  margin: 1px 5px;
-  background-color: red;
+  margin: 0px 5px;
   padding: 0px;
 }
 i {
