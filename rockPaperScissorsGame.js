@@ -222,6 +222,13 @@ function playMusic() {
   document.getElementById('img1').src = localStorage.getItem("userImage") || "pic/avatar12.jpeg";
   document.getElementById('img2').src = localStorage.getItem("computerImage") || "pic/images (18).jpeg";
 
+// document.getElementById('scoreTable').innerHTML = generateScoreTable(localScore);
+
+allUserScore();
+
+  // Display the userScore data in the table
+  document.getElementById('scoreTable').innerHTML = generateScoreTable(userScore);
+
  
       
 }
@@ -272,3 +279,23 @@ function pickedComputerImage(image) {
   localStorage.setItem('computerImage', image);
   document.getElementById('img2').src = localStorage.getItem("computerImage");
 }
+
+function generateScoreTable(scoreArray) {
+  let tableHTML = '<table id="scoreTable">';
+  tableHTML += '<tr><th>User Score</th><th>Computer Score</th></tr>';
+
+  for (let i = 0; i < scoreArray.length; i++) {
+    if (i % 5 === 0) {
+      // Insert an empty row as a separator
+      tableHTML += '<tr><td>&nbsp;</td><td>&nbsp;</td></tr>';
+    }
+
+    const score = scoreArray[i];
+    tableHTML += `<tr><td>${score.myScore}</td><td>${score.computerScore}</td></tr>`;
+  }
+
+  tableHTML += '</table>';
+  return tableHTML;
+}
+
+
