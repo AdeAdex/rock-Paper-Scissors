@@ -216,8 +216,18 @@ i {
   /* border: 1px solid red; */
 }
 
+.avatar-div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  width: 100%;
+}
+
 .avatar-img {
-  width: 50px;
+  width: 80px;
+  height: 80px;
+  border: 1px solid red;
+  border-radius: 50%;
 }
 
 /* #ani {
