@@ -60,8 +60,8 @@
         </div>
         <div class="g-area" id="gArea">
           <div class="avatar">
-            <img src="pic/avatar.png" alt="" id="img1" />
-            <img src="pic/images (18).jpeg" alt="" id="img2" />
+            <img  alt="" id="img1" data-bs-toggle="modal" data-bs-target="#avatar1Modal"/>
+            <img  alt="" id="img2" />
           </div>
           <div class="result-area">
             <div id="disp"></div>
@@ -84,18 +84,18 @@
       </div>
     </div>
     
-    <div class="modal fade" id="boardModal" tabindex="-1" aria-labelledby="boardModalLabel" aria-hidden="true">
+    <div class="modal fade" id="avatar1Modal" tabindex="-1" aria-labelledby="avatar1ModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="boardModalLabel">Modal title</h1>
+            <h1 class="modal-title fs-5" id="avatar1ModalLabel">Modal title</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <div>
-              <img src='pic/avatar.png' onclick='pickedImage("avatar.png")' class="avatar-img" />
-              <img src='pic/images (18).jepg' onclick='pickedImage("images (18).png")' class="avatar-img" />
-              <img src='pic/1.png' onclick='pickedImage("1.png")' class="avatar-img" />
+              <img src='pic/avatar.png' onclick='pickedImage("pic/avatar.png")' class="avatar-img" />
+              <img src='pic/images (18).jpeg' onclick='pickedImage("pic/images (18).jpeg")' class="avatar-img" />
+              <img src='pic/1.png' onclick='pickedImage("pic/1.png")' class="avatar-img" />
             </div>
           </div>
           <div class="modal-footer">

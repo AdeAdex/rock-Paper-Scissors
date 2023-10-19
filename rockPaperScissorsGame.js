@@ -218,6 +218,9 @@ function playMusic() {
 
 
     totalClickResult.innerHTML = parseInt(localStorage.getItem("totalRound")) || 0;
+
+  document.getElementById('img1').src = localStorage.getItem("userImage") || "pic/avatar.png";
+
  
       
 }
@@ -253,4 +256,11 @@ function goHome() {
 function openSaveNameModal() {
   changeNameModal.style.display = "block";
   // myModal.style.display = "none";
+}
+
+
+
+function pickedImage(image) {
+  localStorage.setItem('userImage', image);
+  document.getElementById('img1').src = localStorage.getItem("userImage");
 }
