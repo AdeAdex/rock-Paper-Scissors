@@ -216,6 +216,10 @@ i {
   /* border: 1px solid red; */
 }
 
+.avatar-img {
+  width: 50px;
+}
+
 /* #ani {
     background-color: ;
   }
