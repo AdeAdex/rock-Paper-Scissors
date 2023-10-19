@@ -187,14 +187,14 @@ i {
 }
 
 .avatar img {
-  width: 70px;
-  height: 70px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
-  border: 10px solid red;
+  border: 3px solid red;
 }
 
 .avatar #img2 {
-  border: 10px solid darkorange;
+  border: 3px solid darkorange;
 }
 
 #disp,
