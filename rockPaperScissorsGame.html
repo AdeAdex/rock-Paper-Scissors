@@ -60,8 +60,8 @@
         </div>
         <div class="g-area" id="gArea">
           <div class="avatar">
-            <img  alt="" id="img1" data-bs-toggle="modal" data-bs-target="#avatar1Modal"/>
-            <img  alt="" id="img2" />
+            <img  alt="" id="img1" data-bs-toggle="modal" data-bs-target="#userAvatarModal"/>
+            <img  alt="" id="img2" data-bs-toggle="modal" data-bs-target="#computerAvatarModal"/>
           </div>
           <div class="result-area">
             <div id="disp"></div>
@@ -84,40 +84,80 @@
       </div>
     </div>
     
-    <div class="modal fade" id="avatar1Modal" tabindex="-1" aria-labelledby="avatar1ModalLabel" aria-hidden="true">
+    <div class="modal fade" id="userAvatarModal" tabindex="-1" aria-labelledby="userAvatarModalLabel" aria-hidden="true">
       <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="avatar1ModalLabel">Modal title</h1>
+        <div class="modal-content bg-dark">
+          <div class="modal-header bg-secondary">
+            <h1 class="modal-title fs-5 text-white" id="userAvatarModalLabel">Select User Avatar</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <div class="avatar-div">
-              <img src='pic/avatar.png' onclick='pickedImage("pic/avatar.png")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close"/>
+              <img src='pic/avatar12.jpeg' onclick='pickedImage("pic/avatar12.jpeg")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close"/>
               <img src='pic/images (18).jpeg' onclick='pickedImage("pic/images (18).jpeg")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
-              <img src='pic/avatar2.jpeg' onclick='pickedImage("pic/avatar2.jpeg")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
+              <img src='pic/avatarspecial8.jpeg' onclick='pickedImage("pic/avatarspecial8.jpeg")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
               <img src='pic/avatar3.jpeg' onclick='pickedImage("pic/avatar3.jpeg")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
               <img src='pic/avatar15.jpeg' onclick='pickedImage("pic/avatar15.jpeg")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
               <img src='pic/avatar4.jpeg' onclick='pickedImage("pic/avatar4.jpeg")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
               <img src='pic/avatar6.jpeg' onclick='pickedImage("pic/avatar6.jpeg")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
-              <img src='pic/avatar12.jpeg' onclick='pickedImage("pic/avatar12.jpeg")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
+              <img src='pic/avatar19.jpeg' onclick='pickedImage("pic/avatar19.jpeg")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
               <img src='pic/avatar17.png' onclick='pickedImage("pic/avatar17.png")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
-              <img src='pic/avatar7.jpeg' onclick='pickedImage("pic/avatar7.jpeg")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
+              <img src='pic/avatar22.jpeg' onclick='pickedImage("pic/avatar22.jpeg")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
               <img src='pic/avatar13.jpeg' onclick='pickedImage("pic/avatar13.jpeg")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
               <img src='pic/avatar14.jpeg' onclick='pickedImage("pic/avatar14.jpeg")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
-              <img src='pic/avatar2.jpeg' onclick='pickedImage("pic/avatar2.jpeg")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
-              <img src='pic/avatar2.jpeg' onclick='pickedImage("pic/avatar2.jpeg")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
-              <img src='pic/avatar2.jpeg' onclick='pickedImage("pic/avatar2.jpeg")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
-              <img src='pic/avatar2.jpeg' onclick='pickedImage("pic/avatar2.jpeg")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
-              <img src='pic/avatar2.jpeg' onclick='pickedImage("pic/avatar2.jpeg")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
-              <img src='pic/avatar2.jpeg' onclick='pickedImage("pic/avatar2.jpeg")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
-              <img src='pic/avatar2.jpeg' onclick='pickedImage("pic/avatar2.jpeg")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
-              <img src='pic/avatar2.jpeg' onclick='pickedImage("pic/avatar2.jpeg")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
+              <img src='pic/avatar18.png' onclick='pickedImage("pic/avatar18.png")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
+              <img src='pic/avatar20.jpeg' onclick='pickedImage("pic/avatar20.jpeg")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
+              <img src='pic/avatar11.png' onclick='pickedImage("pic/avatar11.png")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
+              <img src='pic/avatar21.png' onclick='pickedImage("pic/avatar21.png")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
+              <img src='pic/avatarspecial10.jpeg' onclick='pickedImage("pic/avatarspecial10.jpeg")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
+              <img src='pic/avatarspecial4.jpeg' onclick='pickedImage("pic/avatarspecial4.jpeg")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
+              <img src='pic/avatarspecial13.jpeg' onclick='pickedImage("pic/avatarspecial13.jpeg")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
+              <img src='pic/avatarspecial6.jpeg' onclick='pickedImage("pic/avatarspecial6.jpeg")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
+              <img src='pic/avatarspecial11.jpeg' onclick='pickedImage("pic/avatarspecial11.jpeg")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
+              <img src='pic/avatarspecial7.jpeg' onclick='pickedImage("pic/avatarspecial7.jpeg")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
+              <img src='pic/avatarspecial16.jpeg' onclick='pickedImage("pic/avatarspecial16.jpeg")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
+              <img src='pic/avatarspecial5.jpeg' onclick='pickedImage("pic/avatarspecial5.jpeg")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
             </div>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="modal fade" id="computerAvatarModal" tabindex="-1" aria-labelledby="computerAvatarModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content bg-dark">
+          <div class="modal-header bg-secondary">
+            <h1 class="modal-title fs-5 text-white" id="computerAvatarModalLabel">Select Computer Avatar</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body d-flex justify-content-center">
+            <div class="avatar-div">
+              <img src='pic/avatar12.jpeg' onclick='pickedComputerImage("pic/avatar12.jpeg")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close"/>
+              <img src='pic/images (18).jpeg' onclick='pickedComputerImage("pic/images (18).jpeg")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
+              <img src='pic/avatarspecial8.jpeg' onclick='pickedComputerImage("pic/avatarspecial8.jpeg")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
+              <img src='pic/avatar3.jpeg' onclick='pickedComputerImage("pic/avatar3.jpeg")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
+              <img src='pic/avatar15.jpeg' onclick='pickedComputerImage("pic/avatar15.jpeg")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
+              <img src='pic/avatar4.jpeg' onclick='pickedComputerImage("pic/avatar4.jpeg")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
+              <img src='pic/avatar6.jpeg' onclick='pickedComputerImage("pic/avatar6.jpeg")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
+              <img src='pic/avatar19.jpeg' onclick='pickedComputerImage("pic/avatar19.jpeg")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
+              <img src='pic/avatar17.png' onclick='pickedComputerImage("pic/avatar17.png")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
+              <img src='pic/avatar22.jpeg' onclick='pickedComputerImage("pic/avatar22.jpeg")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
+              <img src='pic/avatar13.jpeg' onclick='pickedComputerImage("pic/avatar13.jpeg")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
+              <img src='pic/avatar14.jpeg' onclick='pickedComputerImage("pic/avatar14.jpeg")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
+              <img src='pic/avatar18.png' onclick='pickedComputerImage("pic/avatar18.png")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
+              <img src='pic/avatar20.jpeg' onclick='pickedComputerImage("pic/avatar20.jpeg")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
+              <img src='pic/avatar11.png' onclick='pickedComputerImage("pic/avatar11.png")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
+              <img src='pic/avatar21.png' onclick='pickedComputerImage("pic/avatar21.png")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
+              <img src='pic/avatarspecial10.jpeg' onclick='pickedComputerImage("pic/avatarspecial10.jpeg")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
+              <img src='pic/avatarspecial4.jpeg' onclick='pickedComputerImage("pic/avatarspecial4.jpeg")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
+              <img src='pic/avatarspecial13.jpeg' onclick='pickedComputerImage("pic/avatarspecial13.jpeg")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
+              <img src='pic/avatarspecial6.jpeg' onclick='pickedComputerImage("pic/avatarspecial6.jpeg")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
+              <img src='pic/avatarspecial11.jpeg' onclick='pickedComputerImage("pic/avatarspecial11.jpeg")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
+              <img src='pic/avatarspecial7.jpeg' onclick='pickedComputerImage("pic/avatarspecial7.jpeg")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
+              <img src='pic/avatarspecial16.jpeg' onclick='pickedComputerImage("pic/avatarspecial16.jpeg")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
+              <img src='pic/avatarspecial5.jpeg' onclick='pickedComputerImage("pic/avatarspecial5.jpeg")' class="avatar-img" data-bs-dismiss="modal" aria-label="Close" />
+            </div>
           </div>
         </div>
       </div>

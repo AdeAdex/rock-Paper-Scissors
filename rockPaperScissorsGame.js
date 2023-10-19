@@ -219,7 +219,8 @@ function playMusic() {
 
     totalClickResult.innerHTML = parseInt(localStorage.getItem("totalRound")) || 0;
 
-  document.getElementById('img1').src = localStorage.getItem("userImage") || "pic/avatar.png";
+  document.getElementById('img1').src = localStorage.getItem("userImage") || "pic/avatar12.jpeg";
+  document.getElementById('img2').src = localStorage.getItem("computerImage") || "pic/images (18).jpeg";
 
  
       
@@ -263,4 +264,11 @@ function openSaveNameModal() {
 function pickedImage(image) {
   localStorage.setItem('userImage', image);
   document.getElementById('img1').src = localStorage.getItem("userImage");
+}
+
+
+
+function pickedComputerImage(image) {
+  localStorage.setItem('computerImage', image);
+  document.getElementById('img2').src = localStorage.getItem("computerImage");
 }

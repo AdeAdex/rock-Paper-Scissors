@@ -130,6 +130,8 @@ function resetGame() {
   localStorage.removeItem("computerRound")
   localStorage.removeItem("userRound")
   localStorage.removeItem("totalRound")
+  localStorage.removeItem("userImage")
+  localStorage.removeItem("computerImage")
   location.reload();
 }
 
