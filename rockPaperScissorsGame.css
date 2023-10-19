@@ -227,8 +227,9 @@ i {
 .avatar-img {
   width: 80px;
   height: 80px;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   border-radius: 50%;
+  cursor: pointer;
 }
 
 /* #ani {
