@@ -122,17 +122,30 @@ function rules() {
 }
 
 function resetGame() {
-  localStorage.removeItem("youValue");
-  localStorage.removeItem("meValue");
-  localStorage.removeItem("localDetails");
-  localStorage.removeItem("localScore");
-  localStorage.setItem("backgroundColor", "rgb(0, 0, 42)");
-  localStorage.removeItem("computerRound")
-  localStorage.removeItem("userRound")
-  localStorage.removeItem("totalRound")
-  localStorage.removeItem("userImage")
-  localStorage.removeItem("computerImage")
-  location.reload();
+  Swal.fire({
+    title: "Are you sure you want to reset the Game?",
+    text: "You won't be able to revert this!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      localStorage.removeItem("youValue");
+      localStorage.removeItem("meValue");
+      localStorage.removeItem("localDetails");
+      localStorage.removeItem("localScore");
+      localStorage.setItem("backgroundColor", "rgb(0, 0, 42)");
+      localStorage.removeItem("computerRound");
+      localStorage.removeItem("userRound");
+      localStorage.removeItem("totalRound");
+      localStorage.removeItem("userImage");
+      localStorage.removeItem("computerImage");
+      location.reload();
+    }
+    Swal.fire("Reset!", "Game reset.", "success");
+  });
 }
 
 function advanced() {
