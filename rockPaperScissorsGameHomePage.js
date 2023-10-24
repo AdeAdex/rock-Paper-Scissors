@@ -141,10 +141,17 @@ function resetGame() {
       localStorage.removeItem("totalRound");
       localStorage.removeItem("userImage");
       localStorage.removeItem("computerImage");
-      location.reload();
       
       // Show the success message
-      Swal.fire("Reset!", "Game reset.", "success");
+      Swal.fire({
+        text: "Game reset Successfully.",
+        icon: "success"
+      });
+
+      // Delay the page reload by 1 second (1000 milliseconds)
+      setTimeout(() => {
+        location.reload();
+      }, 5000);
     }
   });
 }
