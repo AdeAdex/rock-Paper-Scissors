@@ -120,7 +120,6 @@ function rules() {
   rulesModal.style.display = "block";
   myModal.style.display = "none";
 }
-
 function resetGame() {
   Swal.fire({
     title: "Are you sure you want to reset the Game?",
@@ -143,10 +142,13 @@ function resetGame() {
       localStorage.removeItem("userImage");
       localStorage.removeItem("computerImage");
       location.reload();
+      
+      // Show the success message
+      Swal.fire("Reset!", "Game reset.", "success");
     }
-    Swal.fire("Reset!", "Game reset.", "success");
   });
 }
+
 
 function advanced() {
   Swal.fire({
