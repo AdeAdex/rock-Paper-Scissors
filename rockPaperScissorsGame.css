@@ -186,13 +186,32 @@ i {
   padding: 10px 0px;
 }
 
-.avatar img {
+/* .avatar img {
   width: 90px;
   height: 90px;
   border-radius: 50%;
   border: 3px solid red;
   cursor: pointer;
+} */
+
+
+.avatar img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 10px solid red;
+  animation: flash 10s infinite;
 }
+
+@keyframes flash {
+  0%, 10%, 20%, 30% {
+    opacity: 1;
+  }
+  5%, 15%, 25%, 35% {
+    opacity: 0;
+  }
+}
+
 
 .avatar #img2 {
   border: 3px solid darkorange;
@@ -453,23 +472,13 @@ i {
     margin: 30px 0px;
     padding: 10px 0px;
   }
+
   .avatar img {
     width: 100px;
     height: 100px;
     border-radius: 50%;
     border: 10px solid red;
-    animation: blink 5s infinite;
   }
-  
-  @keyframes blink {
-    0%, 100% {
-      visibility: visible;
-    }
-    50% {
-      visibility: hidden;
-    }
-  }
-  
 
   .avatar #img2 {
     border: 10px solid darkorange;
