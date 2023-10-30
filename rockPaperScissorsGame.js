@@ -54,7 +54,6 @@ function rock() {
     ani();
   }
 
-
   let fileURL = document.getElementById("img1").src;
   let userImage = localStorage.getItem("userImage");
   if (fileURL != userImage || !fileURL.includes("avatar12.jpeg")) {
@@ -107,7 +106,6 @@ function paper() {
     ani();
   }
 
-  
   let fileURL = document.getElementById("img1").src;
   let userImage = localStorage.getItem("userImage");
   if (fileURL != userImage || !fileURL.includes("avatar12.jpeg")) {
@@ -118,7 +116,6 @@ function paper() {
       document.getElementById("img2").classList.remove("flash");
     }
   }
-
 
   localStorage.setItem("computerRound", computerResult);
   computerScore.value = parseInt(localStorage.getItem("computerRound"));
@@ -162,7 +159,6 @@ function scissors() {
     ani();
   }
 
-  
   let fileURL = document.getElementById("img1").src;
   let userImage = localStorage.getItem("userImage");
   if (fileURL != userImage || !fileURL.includes("avatar12.jpeg")) {
@@ -173,7 +169,6 @@ function scissors() {
       document.getElementById("img2").classList.remove("flash");
     }
   }
-
 
   localStorage.setItem("computerRound", computerResult);
   computerScore.value = parseInt(localStorage.getItem("computerRound"));
@@ -263,10 +258,10 @@ function playMusic() {
   computerImageURL.src = computerLocalStorageImage || "pic/images (18).jpeg";
 
   if (
-    (userImageURL.src == userLocalStorageImage ||
-      userImageURL.src.includes("avatar12.jpeg")) ||
-    (computerImageURL.src == computerLocalStorageImage ||
-      computerImageURL.src.includes("images (18).jpeg"))
+    userImageURL.src == userLocalStorageImage ||
+    userImageURL.src.includes("avatar12.jpeg") ||
+    computerImageURL.src == computerLocalStorageImage ||
+    computerImageURL.src.includes("images (18).jpeg")
   ) {
     userImageURL.classList.add("flash");
     computerImageURL.classList.add("flash");
