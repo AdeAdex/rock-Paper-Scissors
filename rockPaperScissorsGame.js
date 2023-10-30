@@ -241,18 +241,23 @@ function playMusic() {
 
   totalClickResult.innerHTML =
     parseInt(localStorage.getItem("totalRound")) || 0;
+    
+    
+    
+    let userImageURL = document.getElementById("img1");
+    let userLocalStorageImage = localStorage.getItem("userImage");
 
-  document.getElementById("img1").src =
-    localStorage.getItem("userImage") || "pic/avatar12.jpeg";
-  document.getElementById("img2").src =
-    localStorage.getItem("computerImage") || "pic/images (18).jpeg";
+  let computerImageURL = document.getElementById("img2");
+  let computerLocalStorageImage = localStorage.getItem("computerImage");
 
-  let fileURL = document.getElementById("img1").src;
-  console.log(fileURL);
-  let userImage = localStorage.getItem("userImage");
-  if (fileURL == userImage || fileURL.includes("avatar12.jpeg")) {
-    console.log(document.getElementById("img1").src);
-    document.getElementById("img1").classList.add("flash");
+  userImageURL.src = userLocalStorageImage || "pic/avatar12.jpeg";
+  computerImageURL.src = computerLocalStorageImage || "pic/images (18).jpeg";
+
+  
+
+  if (userImageURL.src == userLocalStorageImage || userImageURL.src.includes("avatar12.jpeg")) {
+    console.log(userImageURL.src);
+    userImageURL.classList.add("flash");
   }
 
   allUserScore();
