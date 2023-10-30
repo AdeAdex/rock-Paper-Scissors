@@ -62,6 +62,10 @@ function rock() {
       console.log(fileName);
       document.getElementById("img1").classList.remove("flash");
       document.getElementById("img2").classList.remove("flash");
+      let avatarTextElements = document.querySelectorAll(".avatar-txt");
+      avatarTextElements.forEach((element) => {
+        element.style.display = "none";
+      });
     }
   }
 
@@ -114,6 +118,10 @@ function paper() {
       console.log(fileName);
       document.getElementById("img1").classList.remove("flash");
       document.getElementById("img2").classList.remove("flash");
+      let avatarTextElements = document.querySelectorAll(".avatar-txt");
+      avatarTextElements.forEach((element) => {
+        element.style.display = "none";
+      });
     }
   }
 
@@ -167,6 +175,10 @@ function scissors() {
       console.log(fileName);
       document.getElementById("img1").classList.remove("flash");
       document.getElementById("img2").classList.remove("flash");
+      let avatarTextElements = document.querySelectorAll(".avatar-txt");
+      avatarTextElements.forEach((element) => {
+        element.style.display = "none";
+      });
     }
   }
 
@@ -229,6 +241,17 @@ function soundPlay() {
 //Sound Function that is triggered onload of the page
 
 function playMusic() {
+  
+  let userImageURL = document.getElementById("img1");
+  let userLocalStorageImage = localStorage.getItem("userImage");
+
+  let computerImageURL = document.getElementById("img2");
+  let computerLocalStorageImage = localStorage.getItem("computerImage");
+
+  userImageURL.src = userLocalStorageImage || "pic/avatar12.jpeg";
+  computerImageURL.src = computerLocalStorageImage || "pic/images (18).jpeg";
+
+
   backgroundMusic.play();
 
   const selectedBackgroundColor =
@@ -248,14 +271,6 @@ function playMusic() {
   totalClickResult.innerHTML =
     parseInt(localStorage.getItem("totalRound")) || 0;
 
-  let userImageURL = document.getElementById("img1");
-  let userLocalStorageImage = localStorage.getItem("userImage");
-
-  let computerImageURL = document.getElementById("img2");
-  let computerLocalStorageImage = localStorage.getItem("computerImage");
-
-  userImageURL.src = userLocalStorageImage || "pic/avatar12.jpeg";
-  computerImageURL.src = computerLocalStorageImage || "pic/images (18).jpeg";
 
   if (
     userImageURL.src == userLocalStorageImage ||
@@ -265,7 +280,15 @@ function playMusic() {
   ) {
     userImageURL.classList.add("flash");
     computerImageURL.classList.add("flash");
+  } 
+
+  if (userImageURL.src == userLocalStorageImage || computerImageURL.src == computerLocalStorageImage) {
+    let avatarTextElements = document.querySelectorAll(".avatar-txt");
+    avatarTextElements.forEach((element) => {
+      element.style.display = "none";
+    });
   }
+
 
   allUserScore();
 
@@ -308,11 +331,23 @@ function openSaveNameModal() {
 function pickedImage(image) {
   localStorage.setItem("userImage", image);
   document.getElementById("img1").src = localStorage.getItem("userImage");
+  if (document.getElementById("img1").src = localStorage.getItem("userImage")) {
+    let avatarTextElements = document.querySelectorAll(".avatar-txt");
+      avatarTextElements.forEach((element) => {
+        element.style.display = "none";
+      });
+  }
 }
 
 function pickedComputerImage(image) {
   localStorage.setItem("computerImage", image);
   document.getElementById("img2").src = localStorage.getItem("computerImage");
+  if (document.getElementById("img2").src = localStorage.getItem("computerImage")) {
+    let avatarTextElements = document.querySelectorAll(".avatar-txt");
+      avatarTextElements.forEach((element) => {
+        element.style.display = "none";
+      });
+  }
 }
 
 function generateScoreTable(scoreArray) {
