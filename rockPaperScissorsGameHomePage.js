@@ -245,7 +245,6 @@ function settings() {
 
   const checkbox = document.getElementById("muteMusic");
   checkbox.addEventListener("change", () => {
-    // Update the label text based on the checkbox state
     const labelText = document.getElementById("labelText");
     labelText.textContent = checkbox.checked ? "Mute" : "Unmute";
   });
