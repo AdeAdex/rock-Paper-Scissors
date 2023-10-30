@@ -24,20 +24,25 @@ let winSound = new Audio("win.wav");
 let drawSound = new Audio("draw.mp3");
 let clickSound = new Audio("click.wav");
 let backgroundMusic = new Audio("i-promised.mp3");
+
 function rock() {
   var userValue = "rock";
   var options = ["rock", "paper", "scissors"];
   var random = Math.floor(Math.random() * 3);
   var computerValue = options[random];
+
   if (userValue == computerValue) {
     disp3.innerHTML = `its ${userValue} and ${computerValue}`;
     disp4.innerHTML = `its a tie`;
+    // localStorage.setItem("userImage", "rock.svg");
+    // localStorage.setItem("computerImage", "rock.svg");
     img1.src = "pic/rock.svg";
     img2.src = "pic/rock.svg";
-
   } else if (computerValue == `paper`) {
     disp3.innerHTML = `${userValue} cover by ${computerValue}`;
     disp4.innerHTML = ``;
+    // localStorage.setItem("userImage", "rock.svg");
+    // localStorage.setItem("ComputerImage", "paper.gif");
     img1.src = "pic/rock.svg";
     img2.src = "pic/paper.gif";
     computerResult += 1;
@@ -46,22 +51,43 @@ function rock() {
   } else if (computerValue == `scissors`) {
     disp3.innerHTML = `${userValue} crushes ${computerValue}`;
     disp4.innerHTML = ``;
+    // localStorage.setItem("userImage", "rock.svg");
+    // localStorage.setItem("computerImage", "scissors.gif");
     img1.src = "pic/rock.svg";
     img2.src = "pic/scissors.gif";
     userResult += 1;
     dist.style.right = "";
     ani();
-    
   }
 
-  localStorage.setItem("computerRound", computerResult)
-    computerScore.value =  parseInt(localStorage.getItem("computerRound"));
+  //   let fileURL = document.getElementById("img1").src;
+  // console.log(fileURL);
+  // if (fileURL == localStorage.getItem("userImage") || fileURL) {
+  //   let fileName = fileURL.split('/').pop();
+  //   console.log(fileName);
+  //   if (fileName == 'rock.svg') {
+  //     document.getElementById("img1").classList.remove("flash");
+  //     document.getElementById("img2").classList.remove("flash");
+  //   }
+  // }
 
-    localStorage.setItem("userRound", userResult)
-    myScore.value =  parseInt(localStorage.getItem("userRound"));
+  let fileURL = document.getElementById("img1").src;
+  console.log(fileURL);
+  let userImage = localStorage.getItem("userImage");
+  if (fileURL != userImage || !fileURL.includes("avatar12.jpeg")) {
+    let fileName = fileURL.split("/").pop();
+    if (fileName == "rock.svg") {
+      console.log(fileName);
+      document.getElementById("img1").classList.remove("flash");
+      document.getElementById("img2").classList.remove("flash");
+    }
+  }
 
-  // console.log("user store " + userResult, "comp store " + computerResult,  "user screen " + myScore.value, "comp screen " + computerScore.value);
-  //   display();
+  localStorage.setItem("computerRound", computerResult);
+  computerScore.value = parseInt(localStorage.getItem("computerRound"));
+
+  localStorage.setItem("userRound", userResult);
+  myScore.value = parseInt(localStorage.getItem("userRound"));
   soundPlay();
   allUserScore();
 }
@@ -97,11 +123,11 @@ function paper() {
     dist.style.right = "0";
     ani();
   }
-  localStorage.setItem("computerRound", computerResult)
-    computerScore.value =  parseInt(localStorage.getItem("computerRound"));
+  localStorage.setItem("computerRound", computerResult);
+  computerScore.value = parseInt(localStorage.getItem("computerRound"));
 
-    localStorage.setItem("userRound", userResult)
-    myScore.value =  parseInt(localStorage.getItem("userRound"));
+  localStorage.setItem("userRound", userResult);
+  myScore.value = parseInt(localStorage.getItem("userRound"));
   //   display();
   soundPlay();
   allUserScore();
@@ -138,11 +164,11 @@ function scissors() {
     dist.style.right = "";
     ani();
   }
-  localStorage.setItem("computerRound", computerResult)
-    computerScore.value =  parseInt(localStorage.getItem("computerRound"));
+  localStorage.setItem("computerRound", computerResult);
+  computerScore.value = parseInt(localStorage.getItem("computerRound"));
 
-    localStorage.setItem("userRound", userResult)
-    myScore.value =  parseInt(localStorage.getItem("userRound"));
+  localStorage.setItem("userRound", userResult);
+  myScore.value = parseInt(localStorage.getItem("userRound"));
   //   display();
   soundPlay();
   allUserScore();
@@ -153,8 +179,8 @@ userDetail = JSON.parse(localStorage.getItem("localDetails"));
 
 function soundPlay() {
   totalClick += 1;
-  localStorage.setItem("totalRound", totalClick)
-  totalClickResult.innerHTML = parseInt(localStorage.getItem("totalRound"));;
+  localStorage.setItem("totalRound", totalClick);
+  totalClickResult.innerHTML = parseInt(localStorage.getItem("totalRound"));
   for (let index = 0; index < userDetail.length; index++) {
     disp.innerHTML = `${userDetail[index].myName} PICKED`;
     disp2.innerHTML = `${userDetail[index].computerName} PICKED`;
@@ -179,12 +205,10 @@ function soundPlay() {
         disp4.innerHTML = `${userDetail[index].myName} and ${userDetail[index].computerName} draw`;
         drawSound.play();
       }
-     
+
       totalClick = 0;
       userResult = 0;
       computerResult = 0;
-      
-
 
       return;
     } else {
@@ -202,35 +226,40 @@ function playMusic() {
   backgroundMusic.play();
 
   const selectedBackgroundColor =
-        localStorage.getItem("backgroundColor") || "rgb(0, 0, 42)";
+    localStorage.getItem("backgroundColor") || "rgb(0, 0, 42)";
 
-    // Apply the selected background color to the main-container
-    document.querySelector(".main-container").style.backgroundColor =
-        selectedBackgroundColor;
+  // Apply the selected background color to the main-container
+  document.querySelector(".main-container").style.backgroundColor =
+    selectedBackgroundColor;
 
   you.value = parseInt(localStorage.getItem("youValue")) || 0;
-      me.value = parseInt(localStorage.getItem("meValue")) || 0;
+  me.value = parseInt(localStorage.getItem("meValue")) || 0;
 
+  computerScore.value = parseInt(localStorage.getItem("computerRound")) || 0;
 
-    computerScore.value =  parseInt(localStorage.getItem("computerRound")) || 0;
+  myScore.value = parseInt(localStorage.getItem("userRound")) || 0;
 
-    myScore.value =  parseInt(localStorage.getItem("userRound")) || 0;
+  totalClickResult.innerHTML =
+    parseInt(localStorage.getItem("totalRound")) || 0;
 
+  document.getElementById("img1").src =
+    localStorage.getItem("userImage") || "pic/avatar12.jpeg";
+  document.getElementById("img2").src =
+    localStorage.getItem("computerImage") || "pic/images (18).jpeg";
 
-    totalClickResult.innerHTML = parseInt(localStorage.getItem("totalRound")) || 0;
+  let fileURL = document.getElementById("img1").src;
+  console.log(fileURL);
+  let userImage = localStorage.getItem("userImage");
+  if (fileURL == userImage || fileURL.includes("avatar12.jpeg")) {
+    console.log(document.getElementById("img1").src);
+    document.getElementById("img1").classList.add("flash");
+  }
 
-  document.getElementById('img1').src = localStorage.getItem("userImage") || "pic/avatar12.jpeg";
-  document.getElementById('img2').src = localStorage.getItem("computerImage") || "pic/images (18).jpeg";
-
-// document.getElementById('scoreTable').innerHTML = generateScoreTable(localScore);
-
-allUserScore();
+  allUserScore();
 
   // Display the userScore data in the table
-  document.getElementById('scoreTable').innerHTML = generateScoreTable(userScore);
-
- 
-      
+  document.getElementById("scoreTable").innerHTML =
+    generateScoreTable(userScore);
 }
 
 // Function that triggered both PlayMusic and stopMusic
@@ -255,47 +284,39 @@ function ani() {
   }, 10);
 }
 
-
 function goHome() {
-  window.location.href = 'index.html';
+  window.location.href = "index.html";
 }
-
 
 function openSaveNameModal() {
   changeNameModal.style.display = "block";
   // myModal.style.display = "none";
 }
 
-
-
 function pickedImage(image) {
-  localStorage.setItem('userImage', image);
-  document.getElementById('img1').src = localStorage.getItem("userImage");
+  localStorage.setItem("userImage", image);
+  document.getElementById("img1").src = localStorage.getItem("userImage");
 }
 
-
-
 function pickedComputerImage(image) {
-  localStorage.setItem('computerImage', image);
-  document.getElementById('img2').src = localStorage.getItem("computerImage");
+  localStorage.setItem("computerImage", image);
+  document.getElementById("img2").src = localStorage.getItem("computerImage");
 }
 
 function generateScoreTable(scoreArray) {
   let tableHTML = '<table id="scoreTable">';
-  tableHTML += '<tr><th>User Score</th><th>Computer Score</th></tr>';
+  tableHTML += "<tr><th>User Score</th><th>Computer Score</th></tr>";
 
   for (let i = 0; i < scoreArray.length; i++) {
     if (i % 5 === 0) {
       // Insert an empty row as a separator
-      tableHTML += '<tr><td>&nbsp;</td><td>&nbsp;</td></tr>';
+      tableHTML += "<tr><td>&nbsp;</td><td>&nbsp;</td></tr>";
     }
 
     const score = scoreArray[i];
     tableHTML += `<tr><td>${score.myScore}</td><td>${score.computerScore}</td></tr>`;
   }
 
-  tableHTML += '</table>';
+  tableHTML += "</table>";
   return tableHTML;
 }
-
-
