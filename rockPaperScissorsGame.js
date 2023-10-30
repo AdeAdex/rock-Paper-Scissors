@@ -59,13 +59,8 @@ function rock() {
   if (fileURL != userImage || !fileURL.includes("avatar12.jpeg")) {
     let fileName = fileURL.split("/").pop();
     if (fileName == "rock.svg") {
-      console.log(fileName);
       document.getElementById("img1").classList.remove("flash");
       document.getElementById("img2").classList.remove("flash");
-      let avatarTextElements = document.querySelectorAll(".avatar-txt");
-      avatarTextElements.forEach((element) => {
-        element.style.display = "none";
-      });
     }
   }
 
@@ -115,13 +110,8 @@ function paper() {
   if (fileURL != userImage || !fileURL.includes("avatar12.jpeg")) {
     let fileName = fileURL.split("/").pop();
     if (fileName == "paper.gif") {
-      console.log(fileName);
       document.getElementById("img1").classList.remove("flash");
       document.getElementById("img2").classList.remove("flash");
-      let avatarTextElements = document.querySelectorAll(".avatar-txt");
-      avatarTextElements.forEach((element) => {
-        element.style.display = "none";
-      });
     }
   }
 
@@ -172,13 +162,8 @@ function scissors() {
   if (fileURL != userImage || !fileURL.includes("avatar12.jpeg")) {
     let fileName = fileURL.split("/").pop();
     if (fileName == "scissors.gif") {
-      console.log(fileName);
       document.getElementById("img1").classList.remove("flash");
       document.getElementById("img2").classList.remove("flash");
-      let avatarTextElements = document.querySelectorAll(".avatar-txt");
-      avatarTextElements.forEach((element) => {
-        element.style.display = "none";
-      });
     }
   }
 
@@ -282,12 +267,12 @@ function playMusic() {
     computerImageURL.classList.add("flash");
   } 
 
-  if (userImageURL.src == userLocalStorageImage || computerImageURL.src == computerLocalStorageImage) {
-    let avatarTextElements = document.querySelectorAll(".avatar-txt");
-    avatarTextElements.forEach((element) => {
-      element.style.display = "none";
-    });
-  }
+  // if (userImageURL.src == userLocalStorageImage || computerImageURL.src == computerLocalStorageImage) {
+  //   let avatarTextElements = document.querySelectorAll(".avatar-txt");
+  //   avatarTextElements.forEach((element) => {
+  //     element.style.display = "none";
+  //   });
+  // }
 
 
   allUserScore();
@@ -331,23 +316,23 @@ function openSaveNameModal() {
 function pickedImage(image) {
   localStorage.setItem("userImage", image);
   document.getElementById("img1").src = localStorage.getItem("userImage");
-  if (document.getElementById("img1").src = localStorage.getItem("userImage")) {
-    let avatarTextElements = document.querySelectorAll(".avatar-txt");
-      avatarTextElements.forEach((element) => {
-        element.style.display = "none";
-      });
-  }
+  // if (document.getElementById("img1").src = localStorage.getItem("userImage")) {
+  //   let avatarTextElements = document.querySelectorAll(".avatar-txt");
+  //     avatarTextElements.forEach((element) => {
+  //       element.style.display = "none";
+  //     });
+  // }
 }
 
 function pickedComputerImage(image) {
   localStorage.setItem("computerImage", image);
   document.getElementById("img2").src = localStorage.getItem("computerImage");
-  if (document.getElementById("img2").src = localStorage.getItem("computerImage")) {
-    let avatarTextElements = document.querySelectorAll(".avatar-txt");
-      avatarTextElements.forEach((element) => {
-        element.style.display = "none";
-      });
-  }
+  // if (document.getElementById("img2").src = localStorage.getItem("computerImage")) {
+  //   let avatarTextElements = document.querySelectorAll(".avatar-txt");
+  //     avatarTextElements.forEach((element) => {
+  //       element.style.display = "none";
+  //     });
+  // }
 }
 
 function generateScoreTable(scoreArray) {
