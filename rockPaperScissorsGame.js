@@ -34,15 +34,11 @@ function rock() {
   if (userValue == computerValue) {
     disp3.innerHTML = `its ${userValue} and ${computerValue}`;
     disp4.innerHTML = `its a tie`;
-    // localStorage.setItem("userImage", "rock.svg");
-    // localStorage.setItem("computerImage", "rock.svg");
     img1.src = "pic/rock.svg";
     img2.src = "pic/rock.svg";
   } else if (computerValue == `paper`) {
     disp3.innerHTML = `${userValue} cover by ${computerValue}`;
     disp4.innerHTML = ``;
-    // localStorage.setItem("userImage", "rock.svg");
-    // localStorage.setItem("ComputerImage", "paper.gif");
     img1.src = "pic/rock.svg";
     img2.src = "pic/paper.gif";
     computerResult += 1;
@@ -51,8 +47,6 @@ function rock() {
   } else if (computerValue == `scissors`) {
     disp3.innerHTML = `${userValue} crushes ${computerValue}`;
     disp4.innerHTML = ``;
-    // localStorage.setItem("userImage", "rock.svg");
-    // localStorage.setItem("computerImage", "scissors.gif");
     img1.src = "pic/rock.svg";
     img2.src = "pic/scissors.gif";
     userResult += 1;
@@ -60,19 +54,8 @@ function rock() {
     ani();
   }
 
-  //   let fileURL = document.getElementById("img1").src;
-  // console.log(fileURL);
-  // if (fileURL == localStorage.getItem("userImage") || fileURL) {
-  //   let fileName = fileURL.split('/').pop();
-  //   console.log(fileName);
-  //   if (fileName == 'rock.svg') {
-  //     document.getElementById("img1").classList.remove("flash");
-  //     document.getElementById("img2").classList.remove("flash");
-  //   }
-  // }
 
   let fileURL = document.getElementById("img1").src;
-  console.log(fileURL);
   let userImage = localStorage.getItem("userImage");
   if (fileURL != userImage || !fileURL.includes("avatar12.jpeg")) {
     let fileName = fileURL.split("/").pop();
@@ -123,6 +106,20 @@ function paper() {
     dist.style.right = "0";
     ani();
   }
+
+  
+  let fileURL = document.getElementById("img1").src;
+  let userImage = localStorage.getItem("userImage");
+  if (fileURL != userImage || !fileURL.includes("avatar12.jpeg")) {
+    let fileName = fileURL.split("/").pop();
+    if (fileName == "paper.gif") {
+      console.log(fileName);
+      document.getElementById("img1").classList.remove("flash");
+      document.getElementById("img2").classList.remove("flash");
+    }
+  }
+
+
   localStorage.setItem("computerRound", computerResult);
   computerScore.value = parseInt(localStorage.getItem("computerRound"));
 
@@ -164,6 +161,20 @@ function scissors() {
     dist.style.right = "";
     ani();
   }
+
+  
+  let fileURL = document.getElementById("img1").src;
+  let userImage = localStorage.getItem("userImage");
+  if (fileURL != userImage || !fileURL.includes("avatar12.jpeg")) {
+    let fileName = fileURL.split("/").pop();
+    if (fileName == "scissors.gif") {
+      console.log(fileName);
+      document.getElementById("img1").classList.remove("flash");
+      document.getElementById("img2").classList.remove("flash");
+    }
+  }
+
+
   localStorage.setItem("computerRound", computerResult);
   computerScore.value = parseInt(localStorage.getItem("computerRound"));
 
@@ -241,11 +252,9 @@ function playMusic() {
 
   totalClickResult.innerHTML =
     parseInt(localStorage.getItem("totalRound")) || 0;
-    
-    
-    
-    let userImageURL = document.getElementById("img1");
-    let userLocalStorageImage = localStorage.getItem("userImage");
+
+  let userImageURL = document.getElementById("img1");
+  let userLocalStorageImage = localStorage.getItem("userImage");
 
   let computerImageURL = document.getElementById("img2");
   let computerLocalStorageImage = localStorage.getItem("computerImage");
@@ -253,11 +262,14 @@ function playMusic() {
   userImageURL.src = userLocalStorageImage || "pic/avatar12.jpeg";
   computerImageURL.src = computerLocalStorageImage || "pic/images (18).jpeg";
 
-  
-
-  if (userImageURL.src == userLocalStorageImage || userImageURL.src.includes("avatar12.jpeg")) {
-    console.log(userImageURL.src);
+  if (
+    (userImageURL.src == userLocalStorageImage ||
+      userImageURL.src.includes("avatar12.jpeg")) ||
+    (computerImageURL.src == computerLocalStorageImage ||
+      computerImageURL.src.includes("images (18).jpeg"))
+  ) {
     userImageURL.classList.add("flash");
+    computerImageURL.classList.add("flash");
   }
 
   allUserScore();
