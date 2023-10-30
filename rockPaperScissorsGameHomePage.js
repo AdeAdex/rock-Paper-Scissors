@@ -141,8 +141,8 @@ function resetGame() {
       localStorage.removeItem("totalRound");
       localStorage.removeItem("userImage");
       localStorage.removeItem("computerImage");
+      localStorage.removeItem("backgroundMusicMuted");
 
-      // Show the success message
       Swal.fire({
         text: "Game reset Successfully.",
         icon: "success",
