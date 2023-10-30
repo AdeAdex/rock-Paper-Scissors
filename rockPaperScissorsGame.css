@@ -479,11 +479,11 @@ i {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    border: 10px solid red;
+    border: 3px solid red;
   }
 
   .avatar #img2 {
-    border: 10px solid darkorange;
+    border: 3px solid darkorange;
   }
 
   #disp,
