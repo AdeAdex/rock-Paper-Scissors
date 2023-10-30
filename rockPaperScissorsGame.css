@@ -192,7 +192,9 @@ i {
   width: 100px;
   height: 100px;
   border-radius: 50%;
+  cursor: pointer;
 }
+
 
 .flash {
   animation: flash 10s infinite;
