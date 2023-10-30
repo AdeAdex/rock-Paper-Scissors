@@ -276,14 +276,6 @@ function playMusic() {
     computerImageURL.classList.add("flash");
   } 
 
-  // if (userImageURL.src == userLocalStorageImage || computerImageURL.src == computerLocalStorageImage) {
-  //   let avatarTextElements = document.querySelectorAll(".avatar-txt");
-  //   avatarTextElements.forEach((element) => {
-  //     element.style.display = "none";
-  //   });
-  // }
-
-
   allUserScore();
 
   // Display the userScore data in the table
