@@ -226,10 +226,9 @@ function soundPlay() {
   localStorage.setItem("localScore", JSON.stringify(userScore));
 }
 
+
 //Sound Function that is triggered onload of the page
 
-
-// this is the onload function of the seconds page
 
 function playMusic() {
   
@@ -299,7 +298,6 @@ function stopMusic(x) {
 
 // Function that triggered plus 1 animation
 
-// const dist = document.getElementById("dist");
 function ani() {
   dist.classList.remove("animation");
   setTimeout(function () {
@@ -313,7 +311,6 @@ function goHome() {
 
 function openSaveNameModal() {
   changeNameModal.style.display = "block";
-  // myModal.style.display = "none";
 }
 
 function pickedImage(image) {
@@ -344,7 +341,6 @@ function generateScoreTable(scoreArray) {
 
   for (let i = 0; i < scoreArray.length; i++) {
     if (i % 5 === 0) {
-      // Insert an empty row as a separator
       tableHTML += "<tr><td>&nbsp;</td><td>&nbsp;</td></tr>";
     }
 
