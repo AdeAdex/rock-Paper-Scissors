@@ -141,11 +141,11 @@ function resetGame() {
       localStorage.removeItem("totalRound");
       localStorage.removeItem("userImage");
       localStorage.removeItem("computerImage");
-      
+
       // Show the success message
       Swal.fire({
         text: "Game reset Successfully.",
-        icon: "success"
+        icon: "success",
       });
 
       // Delay the page reload by 1 second (1000 milliseconds)
@@ -155,7 +155,6 @@ function resetGame() {
     }
   });
 }
-
 
 function advanced() {
   Swal.fire({
@@ -206,6 +205,49 @@ function configuration() {
       left top
       no-repeat
     `,
+  });
+}
+
+// this is the homepage where mute or unmute will be decided
+let backgroundMusic = new Audio("i-promised.mp3");
+let isMuted = false; // Initially, the music is not muted
+
+function toggleMusicMute() {
+  isMuted = !isMuted;
+  backgroundMusic.muted = isMuted;
+  localStorage.setItem("backgroundMusicMuted", isMuted.toString());
+}
+
+function settings() {
+  Swal.fire({
+    imageUrl: "https://unsplash.it/400/200",
+    imageWidth: 400,
+    imageHeight: 200,
+    imageAlt: "Music Image",
+    title: "Background Music",
+    html: `
+      <div class="checkbox-container">
+        <label for="muteMusic" class="checkbox-label">
+          <input type="checkbox" id="muteMusic" name="music" value="mute" class="checkbox-input" ${
+            isMuted ? "checked" : ""
+          }>
+          <span id="labelText">${
+            isMuted ? "Unmute" : "Mute"
+          } Background Music</span>
+        </label>
+      </div>
+    `,
+    showCloseButton: true,
+    showConfirmButton: true,
+  }).then((result) => {
+    toggleMusicMute();
+  });
+
+  const checkbox = document.getElementById("muteMusic");
+  checkbox.addEventListener("change", () => {
+    // Update the label text based on the checkbox state
+    const labelText = document.getElementById("labelText");
+    labelText.textContent = checkbox.checked ? "Mute" : "Unmute";
   });
 }
 

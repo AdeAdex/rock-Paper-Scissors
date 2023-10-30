@@ -180,6 +180,9 @@ function scissors() {
 // All Sound Function that is triggered when either the user or computer wins and also works for TotalClick
 userDetail = JSON.parse(localStorage.getItem("localDetails"));
 
+
+
+
 function soundPlay() {
   totalClick += 1;
   localStorage.setItem("totalRound", totalClick);
@@ -225,6 +228,9 @@ function soundPlay() {
 
 //Sound Function that is triggered onload of the page
 
+
+// this is the onload function of the seconds page
+
 function playMusic() {
   
   let userImageURL = document.getElementById("img1");
@@ -236,8 +242,11 @@ function playMusic() {
   userImageURL.src = userLocalStorageImage || "pic/avatar12.jpeg";
   computerImageURL.src = computerLocalStorageImage || "pic/images (18).jpeg";
 
+  let isMuted = localStorage.getItem("backgroundMusicMuted") === "true";
+  if (!isMuted) {
+    backgroundMusic.play();
+  }
 
-  backgroundMusic.play();
 
   const selectedBackgroundColor =
     localStorage.getItem("backgroundColor") || "rgb(0, 0, 42)";
@@ -280,19 +289,21 @@ function playMusic() {
   // Display the userScore data in the table
   document.getElementById("scoreTable").innerHTML =
     generateScoreTable(userScore);
+
+
 }
 
-// Function that triggered both PlayMusic and stopMusic
+// Function that triggered both PlayMusic and stopMusic in the second page
 
 function stopMusic(x) {
   x.classList.toggle("fa-volume-high");
   if (x.classList.toggle("fa-volume-xmark") == true) {
     backgroundMusic.pause();
-    //backgroundMusic.currentTime = 0;
   } else {
     backgroundMusic.play();
   }
 }
+
 
 // Function that triggered plus 1 animation
 
